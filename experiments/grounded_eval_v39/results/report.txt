@@ -1,0 +1,115 @@
+mixed_labels: flagged answers whose summary does not begin with the violated_invariant (a sign of two templates in one answer); not meaningful for the original model.
+
+## ALL CASES
+| measure | base_v39 | v39 |
+|---|---|---|
+| valid_json | 47/199 (0.18-0.30) | 193/199 (0.94-0.99) |
+| finding_found | 11/95 (0.07-0.20) | 75/95 (0.70-0.86) |
+| right_class | 0/95 (0.00-0.04) | 56/95 (0.49-0.68) |
+| quote_grounded | 9/95 (0.05-0.17) | 74/95 (0.69-0.85) |
+| negative_correct | 11/96 (0.07-0.19) | 74/96 (0.68-0.84) |
+| finding_found_repair | 5/8 (0.31-0.86) | 5/8 (0.31-0.86) |
+| patch_exact | 0/8 (0.00-0.32) | 4/8 (0.22-0.78) |
+| patch_ignoring_line_numbers | 0/8 (0.00-0.32) | 4/8 (0.22-0.78) |
+| mixed_labels | 17/22 (0.57-0.90) | 99/99 (0.96-1.00) |
+
+## DEVELOPMENT
+| measure | base_v39 | v39 |
+|---|---|---|
+| valid_json | 28/133 (0.15-0.29) | 127/133 (0.91-0.98) |
+| finding_found | 8/62 (0.07-0.23) | 46/62 (0.62-0.83) |
+| right_class | 0/62 (0.00-0.06) | 38/62 (0.49-0.72) |
+| quote_grounded | 6/62 (0.05-0.20) | 46/62 (0.62-0.83) |
+| negative_correct | 5/63 (0.03-0.17) | 44/63 (0.58-0.80) |
+| finding_found_repair | 5/8 (0.31-0.86) | 5/8 (0.31-0.86) |
+| patch_exact | 0/8 (0.00-0.32) | 4/8 (0.22-0.78) |
+| patch_ignoring_line_numbers | 0/8 (0.00-0.32) | 4/8 (0.22-0.78) |
+| mixed_labels | 13/17 (0.53-0.90) | 67/67 (0.95-1.00) |
+
+## TRANSFER (SSRF, never trained)
+| measure | base_v39 | v39 |
+|---|---|---|
+| valid_json | 19/66 (0.19-0.41) | 66/66 (0.94-1.00) |
+| finding_found | 3/33 (0.03-0.24) | 29/33 (0.73-0.95) |
+| right_class | 0/33 (0.00-0.10) | 18/33 (0.38-0.70) |
+| quote_grounded | 3/33 (0.03-0.24) | 28/33 (0.69-0.93) |
+| negative_correct | 6/33 (0.09-0.34) | 30/33 (0.76-0.97) |
+| mixed_labels | 4/5 (0.38-0.96) | 32/32 (0.89-1.00) |
+
+## BY KIND (answer correct = expected status; positives also need the class)
+| kind | base_v39 | v39 |
+|---|---|---|
+| discovery_open | 0/32 | 9/32 |
+| discovery_scoped | 0/32 | 26/32 |
+| discovery_set | 0/31 | 21/31 |
+| negative_fixed | 1/31 | 24/31 |
+| negative_fixed_open | 10/32 | 26/32 |
+| negative_fixed_set | 0/30 | 22/30 |
+| negative_other_class | 0/2 | 1/2 |
+| negative_other_set | 0/1 | 1/1 |
+| repair | 1/4 | 3/4 |
+| repair_open | 0/4 | 1/4 |
+
+## FUNCTIONS
+base_v39: 101 functions; fully right on 0, wrong on some view on 101
+v39: 101 functions; fully right on 42, wrong on some view on 59
+
+## BY LANGUAGE (positives flagged with the right class / clean cases answered no_finding)
+| language | base_v39 | v39 |
+|---|---|---|
+| go | 0/1 ; 0/1 | 1/1 ; 0/1 |
+| javascript | 0/23 ; 2/24 | 16/23 ; 16/24 |
+| python | 0/43 ; 9/43 | 19/43 ; 35/43 |
+| typescript | 0/28 ; 0/28 | 20/28 ; 23/28 |
+
+## BY SCOPE FORM (share of "finding" answers; vulnerable code should be flagged in every form, clean code in none)
+| form / code | base_v39 | v39 |
+|---|---|---|
+| open / vulnerable | 10/36 (0.16-0.44) | 26/36 (0.56-0.84) |
+| open / clean | 6/32 (0.09-0.35) | 5/32 (0.07-0.32) |
+| single / vulnerable | 3/36 (0.03-0.22) | 29/36 (0.65-0.90) |
+| single / clean | 0/33 (0.00-0.10) | 6/33 (0.09-0.34) |
+| set / vulnerable | 3/31 (0.03-0.25) | 25/31 (0.64-0.91) |
+| set / clean | 0/31 (0.00-0.11) | 8/31 (0.14-0.43) |
+
+## SCOPE-SWAP (the same code under different scope forms): functions in 2+ forms / same verdict in every form / right in every form
+| code | base_v39 | v39 |
+|---|---|---|
+| vulnerable | 0 / 0 / 0 | 0 / 0 / 0 |
+| fixed | 1 / 1 / 0 | 1 / 1 / 1 |
+
+## DISCRIMINATION (functions with both a vulnerable and a fixed view): functions / vulnerable flagged and fixed cleared / flags both / clears both
+| form | base_v39 | v39 |
+|---|---|---|
+| open | 30 / 2 / 5 / 23 | 30 / 17 / 5 / 8 |
+| single | 30 / 0 / 0 / 30 | 30 / 19 / 5 / 6 |
+| set | 30 / 3 / 0 / 27 | 30 / 17 / 8 / 5 |
+| all forms | 90 / 5 / 5 / 80 | 90 / 53 / 18 / 19 |
+| all forms, claim gate on | 90 / 3 / 5 / 82 | 90 / 46 / 18 / 26 |
+| same verdict on both twins (flags both + clears both) | 85 of 90 | 37 of 90 |
+
+## TWIN ORDERING (logged status gap, finding minus no_finding; pairs where the vulnerable view scores above its fixed twin; Wilson interval ignores clustering by function)
+| pairs | base_v39 | v39 |
+|---|---|---|
+| all | 44/90 (0.39-0.59) | 84.5/90 (0.87-0.97) |
+| proved | 36.5/61 (0.47-0.71) | 60/61 (0.91-1.00) |
+| independent | 7.5/29 (0.13-0.44) | 24.5/29 (0.67-0.93) |
+
+## CLAIM GATE (training/finetune/grounded_claim_gate.py): findings given / talk about the fix / hard failures (fix talk or a quote that is not a line) / soft (a name not shown)
+| | base_v39 | v39 |
+|---|---|---|
+| findings / narrate the fix / hard / soft | 22 / 0 / 5 / 0 | 99 / 0 / 7 / 11 |
+| vulnerable flagged, gate on | 9/95 (0.05-0.17) | 68/95 (0.62-0.80) |
+| right class, gate on | 0/95 (0.00-0.04) | 54/95 (0.47-0.66) |
+| clean cleared, gate on | 91/96 (0.88-0.98) | 77/96 (0.71-0.87) |
+
+## HELD-OUT CLASS (transfer positives): cases / flagged / right class / class named is a catalogue title
+| form | base_v39 | v39 |
+|---|---|---|
+| open | 11 / 1 / 0 / 0 | 11 / 9 / 1 / 9 |
+| single | 12 / 1 / 0 / 1 | 12 / 10 / 10 / 10 |
+| set | 10 / 1 / 0 / 0 | 10 / 10 / 7 / 10 |
+
+## PAIRED (same views; both / only first / only second / neither), answer right = expected status and, for findings, the class
+base_v39 vs v39: both 11, only base_v39 1, only v39 123, neither 64
+

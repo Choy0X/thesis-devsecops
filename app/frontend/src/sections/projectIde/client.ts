@@ -1,0 +1,24 @@
+import { request } from "../../lib/request";
+
+export type Project = { id: string; name: string; source?: string; settings?: { instructions?: string; memory?: string[] }; instructions?: string; memory?: string[]; has_active_run?: boolean };
+export type Model = { id: string; name: string; kind?: string; context?: number; available?: boolean; tag?: string; location?: "local" | "cloud"; tool_protocol?: string | null; allow_remote?: boolean; digest?: string; endpoint?: string; [key: string]: unknown };
+export type Chat = { id: string; title: string; model?: Model; workspace?: string; archived?: boolean; pinned?: boolean; last_active_at?: string; [key: string]: unknown };
+export type Run = { id: string; state: string; kind?: string; payload?: unknown; result?: unknown; error?: string; phase?: string; message?: string };
+export type NativePart = { type: string; text?: string; tool?: string; state?: { status?: string; input?: unknown; output?: unknown; error?: unknown; metadata?: unknown } };
+export type Message = { info: { id: string; role: string; [key: string]: unknown }; parts: NativePart[] };
+export type Pending = { id: string; permission?: string; patterns?: string[]; metadata?: unknown; questions?: { question: string; header?: string; multiple?: boolean; options?: { label: string; description?: string; recommended?: boolean }[] }[]; [key: string]: unknown };
+export type TurnMode = "plan" | "build";
+export type CheckpointTool = { tool: string; status: string; path?: string; exit_code?: number; outcome?: string };
+export type AgentProgress = { saved_at: string; mode: TurnMode; state: string; items: { content: string; status: string }[]; last_tool?: CheckpointTool | null };
+export type RunRecovery = { run_id: string; saved_at: string; question?: Pending | null; uncertain: CheckpointTool[]; attempts: number };
+export type ContextUsage = { input_tokens: number; window_tokens: number; estimated: boolean; compacted_messages: number; recalled_messages: number; compacted_tool_exchanges: number };
+export type ChatDetail = { chat: Chat; runs: Run[]; messages: Message[]; permissions: Pending[]; questions: Pending[]; context_usage?: ContextUsage | null; progress?: AgentProgress | null; recovery?: RunRecovery | null; activity?: { phase: string; message?: string; run_id?: string; started_at?: string; elapsed_seconds?: number } | null };
+export type Change = { path: string; status: string; before?: string; after?: string; diff?: string; after_hash?: string; afterHash?: string };
+export type Dependency = { id: string; name: string; version?: string; ecosystem?: string; source_available?: boolean; source_path?: string; [key: string]: unknown };
+export type Finding = { id?: string; title?: string; summary?: string; severity?: string; path?: string; line?: number; [key: string]: unknown };
+export const endpoint = (chat: string) => `/api/chats/${encodeURIComponent(chat)}`;
+export const get = <T,>(path: string, signal?: AbortSignal) => request<T>(path, { signal, ttl: 0 });
+export const write = <T,>(path: string, body?: unknown, method = "POST") => request<T>(path, { method, ...(body !== undefined ? { body: JSON.stringify(body), headers: { "Content-Type": "application/json" } } : {}) });
+export const requestKey = () => globalThis.crypto?.randomUUID?.() || `ide-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+export const describe = (value: unknown): string => typeof value === "string" ? value : JSON.stringify(value, null, 2) ?? "";
+export const activeRun = (runs: Run[]) => runs.find(run => ["running", "waiting_approval", "waiting_permission", "waiting_question", "waiting_input", "starting", "cancelling"].includes(run.state)) || runs.find(run => run.state === "queued");

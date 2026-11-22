@@ -1,0 +1,22 @@
+matched views 86; language cohort views 176
+  views: 86
+  fixed_views: 40
+  fixed_cleared: 36
+  vulnerable_views: 40
+  vulnerable_flagged: 36
+  right_class: 28
+  pairs: 40
+  pair_test: 32
+  flags_both: 4
+  clears_both: 4
+  findings: 46
+  narrates_fix: 0
+  hard_failures: 3
+PASS 2.1 fixed code cleared >= 33 of the fixed views   value 36
+PASS 2.2 pair test >= 28 pairs   value 32
+PASS 2.3 narrated fixes 0 and hard claim-gate failures <= 6   value (0, 3)
+PASS 2.4 right class on the vulnerable views >= 25   value 28
+PASS 3 the evaluation cohort of v39 is in the new evaluation by view id   value 199 of 199 present
+PASS 5.1 valid JSON on the language cohort >= 0.9   value 176/176
+PASS 5.2 C: mean of vulnerable flagged and fixed cleared >= 0.6   value flagged 0.93 (40 views), cleared 0.40 (40 views), mean 0.66
+ACCEPTED as the new baseline

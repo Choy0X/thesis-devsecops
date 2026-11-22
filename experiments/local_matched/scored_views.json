@@ -1,0 +1,3872 @@
+{
+ "gv_0006e959b8c64a895fbd88d2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.969,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "syn:d9a53c0788f1cea9d6d8",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 54.14,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": null,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_00fdfeec0fac64cb01a2a226": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.828,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:51d0b510957e905d9389",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "URL Redirection to Untrusted Site (Open Redirect)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 27.812,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_0172f809f8132db75f56ef96": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 16.328,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/loge5/conf-cfg-ini@3a88a6c52c31eb6c0f033369eed40aa168a636ea:conf-cfg-ini.js:Config.prototype.decode",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 15.719,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_058e550ccc35921fab242df2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.937,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:3b6e110b7d62748a69ca",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 30.235,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_0643437aa5194a9c50189475": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 13.484,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:1333165e4f80d56f65f0",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 33.0,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_07faf154ff35627d8a0e524f": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 6.25,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:1333165e4f80d56f65f0",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 13.641,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_1288154c997186270f606187": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.328,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "github.com/facebookresearch/ParlAI@507d066ef432ea27d3e201da08009872a2f37725:parlai/chat_service/utils/config.py:parse_configuration_file",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Deserialization of Untrusted Data",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 36.891,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_1353b44d4c40037e307e09c2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.422,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:7b24605e44c541a29f55",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.421,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_14b9427592e216cd710919b2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 8.547,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "syn:ce01aa06214c40dbcc8c",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 45.937,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_16035c445c846ca0fa496537": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.859,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.pollDeviceToken",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.969,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_20ac19ea919f5c37ba688d2a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.765,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/pedroetb/tts-api@29d9c25415911ea2f8b6de247cb5c4607d13d434:app.js:processData",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.484,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_22af4ae466c392d4a4566ae6": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.734,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/ymw0407/auth-fetch-mcp@c5c523cd55b24ae1680c5bacef95d59a81ae3450:src/browser.ts:navigateTo",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 29.641,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_23334488efa5bfc03b57faa9": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.954,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.startDeviceAuthorization",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.219,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_24d601e450941121958126e9": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.328,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.refreshToken",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.625,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_291219d9303e610bf3790277": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.906,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.registerClient",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.203,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_2e9ebcc260cce3bb352a90d1": {
+  "base": {
+   "claim_hard": true,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "not_evaluated",
+   "seconds": 15.469,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": true,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "ungrounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "github.com/run-llama/llama_index@369a2942df2efcf6b74461c45d20a0af1fbe4ae2:llama-index-integrations/vector_stores/llama-index-vector-stores-duckdb/llama_index/vector_stores/duckdb/base.py:DuckDBVectorStore.delete",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 39.015,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_2ff852b8d034cfea57e260c5": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.516,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "github.com/GLips/Figma-Context-MCP@7f4b5859454b0567c2121ff22c69a0344680b124:src/utils/fetch-with-retry.ts:fetchWithRetry",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 41.547,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_30934cdaaa2d3c10bb1e6b9a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 6.125,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/flyfish-dev/file-viewer@ef045680f8d9830a3eee9612f7df46a734361b07:packages/renderers/word/src/wordDoc.ts:render",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 34.594,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": null,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_353c674c646657b7fdaf5793": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.922,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.registerClient",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 27.109,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_3589718c61e2d26ca25f3777": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.438,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:417d2d85ae6f77846718",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.406,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_3b251e452add1291a0f95a30": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.36,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "github.com/facebookresearch/ParlAI@507d066ef432ea27d3e201da08009872a2f37725:parlai/chat_service/utils/config.py:parse_configuration_file",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.687,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_3dd2382507eb70b1ca20e1da": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.188,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:ce3107a6baf7e134b2ef",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.547,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_4bdcd020090628893c32cc71": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Improper Input Validation",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 24.547,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "repair_open",
+  "unit": "github.com/loge5/conf-cfg-ini@3a88a6c52c31eb6c0f033369eed40aa168a636ea:conf-cfg-ini.js:Config.prototype.decode",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Improper Input Validation",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 56.484,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_4cc9ff661926b6b951b2996a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.265,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:d0fafed8fbb52d87dd90",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 16.391,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_5134360c4cd6b63d1f9ef91d": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 13.843,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "github.com/BurtTheCoder/mcp-maigret@b1ae073c4b3e789ab8de36dc6ca8111ae9399e7a:src/index.ts:MaigretServer.execCommand",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 29.25,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_52a50f984a1b3dfc36c869bf": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.828,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "syn:17612c2eb96376839334",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 15.266,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_53df66d88d263bb708867a62": {
+  "base": {
+   "claim_hard": true,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "ungrounded",
+   "seconds": 17.687,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": true,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "ungrounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "repair",
+  "unit": "github.com/run-llama/llama_index@369a2942df2efcf6b74461c45d20a0af1fbe4ae2:llama-index-integrations/vector_stores/llama-index-vector-stores-duckdb/llama_index/vector_stores/duckdb/base.py:DuckDBVectorStore.delete",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 54.859,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_53f7c59c4b80391299e55021": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.625,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:7b24605e44c541a29f55",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.968,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_549a81a1fdc3da1986cb4a95": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.813,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/danielgatis/rembg@07ad0d493057bddf821dcc3e2410eb7e065257c0:rembg/commands/s_command.py:s_command.get_index",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Missing Authorization for Critical Function",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 22.563,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_550480c177b3c87b858cb219": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "not_evaluated",
+   "seconds": 13.0,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:417d2d85ae6f77846718",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 30.047,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_59376f281a62f3077695f5b3": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 20.391,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "repair",
+  "unit": "syn:06e7ade3d727176540c2",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 44.562,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_5a36b60b49a435ea61c83f37": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.343,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:06e7ade3d727176540c2",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.375,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_5c32fa0746e72b8edfef0e1e": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.547,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:7f8d3a832e0731fee92d",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 39.844,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_5c4f3c214edec95a24339d09": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.578,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:5b6b72a00a1628a643c4",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "URL Redirection to Untrusted Site (Open Redirect)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 28.063,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": true,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_5ec91a98b73cc1bf7679b2f6": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.032,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:8ab009c7f414d35619e4",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Missing Authorization",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 25.281,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_5ff953aadbdf55c9bb3aca3e": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.781,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:9a3af772563487044d62",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "URL Redirection to Untrusted Site (Open Redirect)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 27.937,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": true,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_603d4e084bc570988b7df70d": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.609,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.pollDeviceToken",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 29.532,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_60fa3a31433f7a974609854a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.735,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:a77e8355a32e072f15b3",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 45.25,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_67e68eb7982558dc9620f07d": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.265,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "syn:d9a53c0788f1cea9d6d8",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 35.75,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_6cf8cfbfb7c8c86c0f6c22a3": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.266,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/ymw0407/auth-fetch-mcp@c5c523cd55b24ae1680c5bacef95d59a81ae3450:src/browser.ts:navigateTo",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.281,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_6da8edbe801e5347cc87d69f": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.609,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "syn:17612c2eb96376839334",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.984,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_6fdd501e4015ab3f6a6727b0": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 6.938,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:b01b171f37ab02a4510d",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.328,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_7156e65316fa696835c366af": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.859,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/loge5/conf-cfg-ini@3a88a6c52c31eb6c0f033369eed40aa168a636ea:conf-cfg-ini.js:Config.prototype.decode",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 46.047,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_73f57dff1c456bdb3ff6bc18": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.313,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.listAvailableProfiles",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.5,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_772c711078f5e3a2b09a40a6": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.593,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/flyfish-dev/file-viewer@ef045680f8d9830a3eee9612f7df46a734361b07:packages/renderers/word/src/wordDoc.ts:render",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 40.594,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_7da8fd943aab909e9d6fdfdf": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.375,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.listAvailableProfiles",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 28.969,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_7e1b534dab4f198ea3c3b5ff": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.719,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:7f8d3a832e0731fee92d",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.906,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_838fbc9443229182e88902fb": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.875,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:eaf69e8b3aba9845e053",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.844,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_85189fb61af7a5c02763233e": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.781,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:19d0a1bc0bed724e9251",
+  "v40": {
+   "claim_hard": true,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 40.0,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_85541272eb92a6682dc3011a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.281,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:7148e1c82df033ecf5c2",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.609,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_862d63129348deaaa5694dba": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.781,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:154bc892b55b43abe80a",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "URL Redirection to Untrusted Site (Open Redirect)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 28.11,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": true,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_871dee1c8b033c0ccd26c409": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 21.172,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/remix-run/react-router@c89c32c562a7723c45ee71dab1c892acaf7a608d:packages/react-router/lib/dom/lib.tsx:ScrollRestoration",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 48.297,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_8a75641a1939301d58ca3805": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.547,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:06e7ade3d727176540c2",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.797,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_8bd84ad3634d2ca442f03281": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 19.296,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": null,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:d0fafed8fbb52d87dd90",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 16.485,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_8ed87a6e0e4f6ca93591f33c": {
+  "base": {
+   "claim_hard": true,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 13.579,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/pedroetb/tts-api@29d9c25415911ea2f8b6de247cb5c4607d13d434:app.js:processData",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 28.375,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_8f5b6be5a3c321e383823926": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 8.765,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "repair",
+  "unit": "github.com/loge5/conf-cfg-ini@3a88a6c52c31eb6c0f033369eed40aa168a636ea:conf-cfg-ini.js:Config.prototype.decode",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 57.344,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_959a7241bf1bb968ee10fd70": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.531,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:eaf69e8b3aba9845e053",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 34.531,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_97dab3b00d9cbf7838505445": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 25.094,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "repair_open",
+  "unit": "syn:06e7ade3d727176540c2",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 41.563,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_9ac0e846f164efe60ca3816a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.938,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.startDeviceAuthorization",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 27.875,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_9e0dd9622309cd526e7f4768": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 9.75,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "github.com/GLips/Figma-Context-MCP@7f4b5859454b0567c2121ff22c69a0344680b124:src/utils/fetch-with-retry.ts:fetchWithRetry",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 17.281,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_9e36d8db2b293ab56e40beb2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.594,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:5b6b72a00a1628a643c4",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.641,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_a0f9cdc325c9d3e4740d6217": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.782,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:b01b171f37ab02a4510d",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.203,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_b02610662747d2ae0def7ed9": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.797,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:154bc892b55b43abe80a",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.953,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_b0c9829c6417a09927b8cb69": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.625,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:a77e8355a32e072f15b3",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 45.313,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": null,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_b1cadaf23821eb762673d1ea": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.687,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:bf1e97696cb397886401",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.906,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_b27cbb223744ebddaa1b0224": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.641,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:7148e1c82df033ecf5c2",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Missing Authentication for Critical Function",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 25.281,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_b294cd7b6c1e4c5e8797a26a": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 13.329,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "github.com/run-llama/llama_index@369a2942df2efcf6b74461c45d20a0af1fbe4ae2:llama-index-integrations/vector_stores/llama-index-vector-stores-duckdb/llama_index/vector_stores/duckdb/base.py:DuckDBVectorStore.delete",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.594,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_b65b20635b388b6cc455c583": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.266,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/bentoml/BentoML@534c3584621da4ab954bdc3d814cc66b95ae5fb8:src/_bentoml_impl/serde.py:MultipartSerde.ensure_file",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.313,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_c13a7d7022b8a7bf23686f9d": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.157,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:ce3107a6baf7e134b2ef",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Control of Generation of Code (Code Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 35.562,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_c14adeb1a6206333e9a7dc14": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.391,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/decolua/9router@126aa244c5b51b74ab8c7594e3418fcf4437bf6f:src/lib/oauth/services/kiro.js:KiroService.refreshToken",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 33.656,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_c308b57f18e6dff273e0a976": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.984,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:51d0b510957e905d9389",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.157,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_c88f381e63911bb49b744528": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 17.296,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "syn:ce01aa06214c40dbcc8c",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 42.781,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": null,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": false,
+   "valid_json": true
+  }
+ },
+ "gv_cb8e830006d0f952eb1c5f0a": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 15.969,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "github.com/BurtTheCoder/mcp-maigret@b1ae073c4b3e789ab8de36dc6ca8111ae9399e7a:src/index.ts:MaigretServer.execCommand",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.969,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_d58414dd6c8e0950af9fe06f": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.61,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:8ab009c7f414d35619e4",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.704,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_d6db616705264c3ee858a44e": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.609,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/LearningCircuit/local-deep-research@0148fa265a3da460c07def7441f9ac49ea61fbcb:src/local_deep_research/web/services/pdf_service.py:PDFService._markdown_to_html",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 44.984,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_d8afff8fc937c15a68bc09cc": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.0,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_set",
+  "unit": "syn:bf1e97696cb397886401",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 32.781,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_d931d00f42a622d631d02097": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.0,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/LearningCircuit/local-deep-research@0148fa265a3da460c07def7441f9ac49ea61fbcb:src/local_deep_research/web/services/pdf_service.py:PDFService._markdown_to_html",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.312,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_dcc910f9f564f2429803223e": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.781,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:9a3af772563487044d62",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.907,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_dde9001c314aec1413078202": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 21.297,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/remix-run/react-router@c89c32c562a7723c45ee71dab1c892acaf7a608d:packages/react-router/lib/dom/lib.tsx:ScrollRestoration",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 16.562,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_e8290b25767dbff225934dd2": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.61,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "discovery_open",
+  "unit": "syn:757db519c66586c7688e",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Missing Authentication for Critical Function",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 24.844,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_eaba918f63bc1408892739d5": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 3.953,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:3b6e110b7d62748a69ca",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 10.906,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_ebc299d0a5867b47585ba625": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 5.25,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_open",
+  "unit": "syn:757db519c66586c7688e",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 12.594,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_ebd138db13ed68876b164255": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 4.265,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed",
+  "unit": "github.com/danielgatis/rembg@07ad0d493057bddf821dcc3e2410eb7e065257c0:rembg/commands/s_command.py:s_command.get_index",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 11.406,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_ed138613a571ccecb88a3580": {
+  "base": {
+   "claim_hard": false,
+   "class_ok": false,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 13.141,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": false,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "finding",
+  "kind": "discovery_scoped",
+  "unit": "github.com/bentoml/BentoML@534c3584621da4ab954bdc3d814cc66b95ae5fb8:src/_bentoml_impl/serde.py:MultipartSerde.ensure_file",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Server-Side Request Forgery (SSRF)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 33.328,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_f2b2d8fd73f5096bf17e7d5e": {
+  "base": {
+   "claim_hard": true,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "ungrounded",
+   "seconds": 16.656,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "base_v39_colab": {
+   "claim_hard": true,
+   "class_ok": false,
+   "got_status": "finding",
+   "quote_state": "ungrounded",
+   "status_ok": true,
+   "valid_json": true
+  },
+  "expected_status": "finding",
+  "kind": "repair_open",
+  "unit": "github.com/run-llama/llama_index@369a2942df2efcf6b74461c45d20a0af1fbe4ae2:llama-index-integrations/vector_stores/llama-index-vector-stores-duckdb/llama_index/vector_stores/duckdb/base.py:DuckDBVectorStore.delete",
+  "v40": {
+   "claim_hard": false,
+   "class_ok": true,
+   "done_reason": "stop",
+   "got_class": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+   "got_status": "finding",
+   "narrates_fix": false,
+   "quote_state": "grounded",
+   "seconds": 53.766,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": false,
+   "class_ok": true,
+   "got_status": "finding",
+   "quote_state": "grounded",
+   "status_ok": true,
+   "valid_json": true
+  }
+ },
+ "gv_f6af5c237beea8fcbaf1c697": {
+  "base": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": null,
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 7.843,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "base_v39_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": null,
+   "quote_state": null,
+   "status_ok": false,
+   "valid_json": false
+  },
+  "expected_status": "no_finding",
+  "kind": "negative_fixed_set",
+  "unit": "syn:19d0a1bc0bed724e9251",
+  "v40": {
+   "claim_hard": null,
+   "class_ok": null,
+   "done_reason": "stop",
+   "got_class": null,
+   "got_status": "no_finding",
+   "narrates_fix": null,
+   "quote_state": null,
+   "seconds": 14.938,
+   "status_ok": true,
+   "valid_json": true
+  },
+  "v40a_colab": {
+   "claim_hard": null,
+   "class_ok": null,
+   "got_status": "no_finding",
+   "quote_state": null,
+   "status_ok": true,
+   "valid_json": true
+  }
+ }
+}

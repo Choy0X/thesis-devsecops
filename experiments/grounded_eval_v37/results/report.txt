@@ -1,0 +1,99 @@
+mixed_labels: flagged answers whose summary does not begin with the violated_invariant (a sign of two templates in one answer); not meaningful for the original model.
+
+## ALL CASES
+| measure | base_v37 | v36 | v37 |
+|---|---|---|---|
+| valid_json | 22/87 (0.17-0.35) | 73/74 (0.93-1.00) | 81/87 (0.86-0.97) |
+| finding_found | 9/40 (0.12-0.38) | 26/35 (0.58-0.86) | 26/40 (0.50-0.78) |
+| right_class | 0/40 (0.00-0.09) | 21/35 (0.44-0.74) | 22/40 (0.40-0.69) |
+| quote_grounded | 7/40 (0.09-0.32) | 26/35 (0.58-0.86) | 26/40 (0.50-0.78) |
+| negative_correct | 2/39 (0.01-0.17) | 30/33 (0.76-0.97) | 27/39 (0.54-0.81) |
+| finding_found_repair | 5/8 (0.31-0.86) | 5/6 (0.44-0.97) | 7/8 (0.53-0.98) |
+| patch_exact | 0/8 (0.00-0.32) | 4/6 (0.30-0.90) | 4/8 (0.22-0.78) |
+| patch_ignoring_line_numbers | 0/8 (0.00-0.32) | 5/6 (0.44-0.97) | 6/8 (0.41-0.93) |
+| mixed_labels | 13/16 (0.57-0.93) | 34/34 (0.90-1.00) | 43/43 (0.92-1.00) |
+
+## DEVELOPMENT
+| measure | base_v37 | v36 | v37 |
+|---|---|---|---|
+| valid_json | 12/48 (0.15-0.39) | 38/39 (0.87-1.00) | 44/48 (0.80-0.97) |
+| finding_found | 4/18 (0.09-0.45) | 15/15 (0.80-1.00) | 14/18 (0.55-0.91) |
+| right_class | 0/18 (0.00-0.18) | 15/15 (0.80-1.00) | 14/18 (0.55-0.91) |
+| quote_grounded | 2/18 (0.03-0.33) | 15/15 (0.80-1.00) | 14/18 (0.55-0.91) |
+| negative_correct | 2/22 (0.03-0.28) | 17/18 (0.74-0.99) | 15/22 (0.47-0.84) |
+| finding_found_repair | 5/8 (0.31-0.86) | 5/6 (0.44-0.97) | 7/8 (0.53-0.98) |
+| patch_exact | 0/8 (0.00-0.32) | 4/6 (0.30-0.90) | 4/8 (0.22-0.78) |
+| patch_ignoring_line_numbers | 0/8 (0.00-0.32) | 5/6 (0.44-0.97) | 6/8 (0.41-0.93) |
+| mixed_labels | 7/9 (0.45-0.94) | 21/21 (0.85-1.00) | 27/27 (0.88-1.00) |
+
+## TRANSFER (SSRF, never trained)
+| measure | base_v37 | v36 | v37 |
+|---|---|---|---|
+| valid_json | 10/39 (0.15-0.41) | 35/35 (0.90-1.00) | 37/39 (0.83-0.99) |
+| finding_found | 5/22 (0.10-0.43) | 11/20 (0.34-0.74) | 12/22 (0.35-0.73) |
+| right_class | 0/22 (0.00-0.15) | 6/20 (0.15-0.52) | 8/22 (0.20-0.57) |
+| quote_grounded | 5/22 (0.10-0.43) | 11/20 (0.34-0.74) | 12/22 (0.35-0.73) |
+| negative_correct | 0/17 (0.00-0.18) | 13/15 (0.62-0.96) | 12/17 (0.47-0.87) |
+| mixed_labels | 6/7 (0.49-0.97) | 13/13 (0.77-1.00) | 16/16 (0.81-1.00) |
+
+## BY KIND (answer correct = expected status; positives also need the class)
+| kind | base_v37 | v36 | v37 |
+|---|---|---|---|
+| discovery_open | 0/14 | 5/12 | 6/14 |
+| discovery_scoped | 0/14 | 10/12 | 10/14 |
+| discovery_set | 0/12 | 6/11 | 6/12 |
+| negative_fixed | 0/10 | 9/9 | 5/10 |
+| negative_fixed_open | 1/7 | 4/5 | 5/7 |
+| negative_fixed_set | 0/3 | 3/3 | 2/3 |
+| negative_neighbour_open | 1/1 | 1/1 | 1/1 |
+| negative_other_class | 0/10 | 7/8 | 8/10 |
+| negative_other_set | 0/8 | 6/7 | 6/8 |
+| repair | 1/4 | 3/3 | 4/4 |
+| repair_open | 0/4 | 2/3 | 2/4 |
+
+## FUNCTIONS
+base_v37: 48 functions; fully right on 0, wrong on some view on 48
+v36: 35 functions; fully right on 19, wrong on some view on 16
+v37: 48 functions; fully right on 23, wrong on some view on 25
+
+## BY LANGUAGE (positives flagged with the right class / clean cases answered no_finding)
+| language | base_v37 | v36 | v37 |
+|---|---|---|---|
+| javascript | 0/12 ; 1/9 | 6/11 ; 7/7 | 5/12 ; 6/9 |
+| python | 0/16 ; 1/15 | 6/14 ; 11/13 | 8/16 ; 11/15 |
+| typescript | 0/12 ; 0/15 | 9/10 ; 12/13 | 9/12 ; 10/15 |
+
+## BY SCOPE FORM (share of "finding" answers; vulnerable code should be flagged in every form, clean code in none)
+| form / code | base_v37 | v36 | v37 |
+|---|---|---|---|
+| open / vulnerable | 9/18 (0.29-0.71) | 12/15 (0.55-0.93) | 13/18 (0.49-0.88) |
+| open / clean | 2/8 (0.07-0.59) | 1/6 (0.03-0.56) | 1/8 (0.02-0.47) |
+| single / vulnerable | 3/18 (0.06-0.39) | 13/15 (0.62-0.96) | 14/18 (0.55-0.91) |
+| single / clean | 0/20 (0.00-0.16) | 1/17 (0.01-0.27) | 6/20 (0.15-0.52) |
+| set / vulnerable | 2/12 (0.05-0.45) | 6/11 (0.28-0.79) | 6/12 (0.25-0.75) |
+| set / clean | 0/11 (0.00-0.26) | 1/10 (0.02-0.40) | 3/11 (0.10-0.57) |
+
+## SCOPE-SWAP (the same code under different scope forms): functions in 2+ forms / same verdict in every form / right in every form
+| code | base_v37 | v36 | v37 |
+|---|---|---|---|
+| vulnerable | 8 / 3 / 0 | 8 / 7 / 4 | 8 / 6 / 3 |
+| fixed | 2 / 2 / 0 | 2 / 1 / 1 | 2 / 1 / 1 |
+
+## DISCRIMINATION (functions with both a vulnerable and a fixed view): functions / vulnerable flagged and fixed cleared / flags both / clears both
+| form | base_v37 | v36 | v37 |
+|---|---|---|---|
+| open | 2 / 1 / 0 / 1 | 2 / 1 / 1 / 0 | 2 / 1 / 1 / 0 |
+| single | 2 / 0 / 0 / 2 | 2 / 2 / 0 / 0 | 2 / 0 / 1 / 1 |
+
+## HELD-OUT CLASS (transfer positives): cases / flagged / right class / class named is a catalogue title
+| form | base_v37 | v36 | v37 |
+|---|---|---|---|
+| open | 8 / 3 / 0 / 0 | 7 / 5 / 0 / 5 | 8 / 5 / 1 / 5 |
+| single | 8 / 1 / 0 / 1 | 7 / 5 / 5 / 5 | 8 / 6 / 6 / 6 |
+| set | 6 / 1 / 0 / 0 | 6 / 1 / 1 / 1 | 6 / 1 / 1 / 1 |
+
+## PAIRED (same views; both / only first / only second / neither), answer right = expected status and, for findings, the class
+base_v37 vs v36: both 3, only base_v37 0, only v36 53, neither 18
+base_v37 vs v37: both 3, only base_v37 0, only v37 52, neither 32
+v36 vs v37: both 45, only v36 11, only v37 1, neither 17
+

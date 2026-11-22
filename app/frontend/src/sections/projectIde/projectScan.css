@@ -1,0 +1,124 @@
+.chat-scan-card {
+  min-width: 0;
+  margin: 0 0 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--fg);
+  font: 400 13px/1.55 "Inter Variable", Inter, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.chat-scan-card p { margin: 0; }
+.chat-scan-card strong { font-weight: 600; }
+.chat-scan-head { display: flex; align-items: center; gap: 10px; padding: 13px 15px; }
+.chat-scan-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--surface-3);
+  color: var(--fg);
+}
+.chat-scan-heading { flex: 1; min-width: 0; }
+.chat-scan-heading > strong { display: block; font-size: 14px; }
+.chat-scan-heading > p { margin-top: 1px; color: var(--muted); font-size: 12px; }
+.chat-scan-body { padding: 0 15px 14px; }
+.chat-scan-body > * + *, .chat-dependency-report > * + * { margin-block-start: 11px; }
+.chat-scan-body > pre, .chat-scan-finding-body > pre, .chat-scan-disclosure > pre {
+  margin: 7px 0 0;
+  padding: 9px 10px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.chat-scan-tag {
+  flex: 0 0 auto;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.chat-scan-tag[data-tone="danger"], .chat-scan-metrics [data-tone="danger"] dd { color: var(--crit-soft); }
+.chat-scan-tag[data-tone="pending"], .chat-scan-metrics [data-tone="pending"] dd { color: var(--warn); }
+.chat-scan-meter { height: 4px; border-radius: 4px; overflow: hidden; background: var(--surface-3); }
+.chat-scan-meter > span, .chat-scan-meter[data-measured="false"]::after { display: block; height: 100%; background: var(--brand-strong); }
+.chat-scan-meter > span { transition: inline-size 160ms ease-out; }
+.chat-scan-meter[data-measured="false"]::after { content: ""; width: 26%; animation: scan-indeterminate 1.9s ease-in-out infinite; }
+@keyframes scan-indeterminate { from { transform: translateX(-105%); } to { transform: translateX(400%); } }
+.chat-scan-meter-detail { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 14px; font-size: 12px; color: var(--muted); }
+.chat-scan-meter-detail code { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.chat-scan-live-counts { display: flex; gap: 6px 16px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.chat-scan-steps { display: flex; flex-wrap: wrap; gap: 7px 18px; margin: 11px 0 0; padding: 10px 0 0; border-block-start: 1px solid var(--border); list-style: none; }
+.chat-scan-steps li { display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: 11px; }
+.chat-scan-steps li[data-state="active"] { color: var(--fg); }
+.chat-scan-step-dot { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid var(--border-strong); border-radius: 50%; }
+.chat-scan-steps li[data-state="active"] .chat-scan-step-dot { border-color: var(--brand-strong); box-shadow: inset 0 0 0 3px var(--surface); background: var(--brand-strong); }
+.chat-scan-steps li[data-state="done"] .chat-scan-step-dot { color: var(--fg); }
+.project-ide button.chat-scan-stop, .project-ide button.chat-scan-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 4px 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  color: var(--fg);
+  font-size: 12px;
+}
+
+.chat-scan-metrics { display: flex; flex-wrap: wrap; margin: 0; padding: 0; border-block: 1px solid var(--border); }
+.chat-scan-metrics > div { display: flex; flex: 1 1 100px; flex-direction: column-reverse; row-gap: 1px; padding: 7px 10px; }
+.chat-scan-metrics > div + div { border-inline-start: 1px solid var(--border); }
+.chat-scan-metrics dt { color: var(--muted); font-size: 11px; }
+.chat-scan-metrics dd { margin: 0; font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.chat-scan-explainer { color: var(--muted); font-size: 12px; }
+.chat-dependency-report > .chat-scan-explainer + .chat-scan-metrics { margin-block-start: 10px; }
+.chat-scan-findings, .chat-scan-dependencies { display: grid; gap: 6px; }
+.chat-scan-finding, .chat-scan-dependency { min-width: 0; border: 1px solid var(--border); border-radius: 7px; background: var(--surface-2); }
+.chat-scan-finding summary { display: flex; align-items: center; gap: 8px; padding: 9px 10px; list-style: none; cursor: pointer; }
+.chat-scan-finding summary:hover { background: var(--surface-3); }
+.chat-scan-finding summary::-webkit-details-marker { display: none; }
+.chat-scan-finding summary > svg { flex-shrink: 0; color: var(--muted); transform: rotate(-90deg); }
+.chat-scan-finding[open] summary > svg { transform: rotate(0); }
+.chat-scan-finding summary > span:nth-child(2) { flex: 1; min-width: 0; }
+.chat-scan-finding summary code { display: block; color: var(--muted); font-size: 11px; }
+.chat-scan-finding-body { padding: 0 10px 10px; }
+.chat-scan-finding-body > p { color: var(--muted); }
+.chat-scan-finding-body > pre + p, .chat-scan-finding-body > p + p { margin-block-start: 7px; }
+.chat-scan-disclosure { border-block-start: 1px solid var(--border); padding-block-start: 8px; }
+.chat-scan-disclosure > summary { min-height: 24px; cursor: pointer; color: var(--fg); font-weight: 550; }
+.chat-scan-disclosure > :not(summary) + .chat-scan-more { margin-block-start: 6px; }
+.chat-scan-coverage { display: grid; gap: 8px; padding: 4px 1px; }
+.chat-scan-coverage dl { display: grid; gap: 3px; margin: 0; }
+.chat-scan-coverage dl > div { display: flex; justify-content: space-between; gap: 8px; }
+.chat-scan-coverage dt { color: var(--muted); }
+.chat-scan-coverage dd { margin: 0; text-align: end; }
+.chat-scan-dependencies { margin-block-start: 6px; }
+.chat-scan-dependency { padding: 8px 10px; }
+.chat-scan-dependency > header, .chat-scan-dependency > header > div { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 7px; }
+.chat-scan-dependency > header { justify-content: space-between; }
+.chat-scan-dependency > header > div > span { color: var(--muted); font-size: 11px; }
+.chat-scan-dependency[data-tone="danger"] { border-inline-start-color: var(--crit-soft); }
+.chat-scan-dependency .chat-scan-version { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-block: 3px; color: var(--muted); font-size: 12px; }
+.chat-scan-version code { color: var(--fg); }
+.chat-scan-advisories, .chat-scan-inventory-issues { margin: 0; padding: 0; list-style: none; }
+.chat-scan-advisories li, .chat-scan-inventory-issues li { display: flex; flex-wrap: wrap; gap: 2px 6px; padding: 3px 0; }
+.chat-scan-advisories a { color: var(--fg); font-weight: 550; text-decoration: underline; text-underline-offset: 2px; }
+.chat-scan-dependency .chat-scan-upgrade { padding-block-start: 5px; border-block-start: 1px solid var(--border); }
+.chat-scan-upgrade small { display: block; color: var(--muted); }
+
+@media (max-width: 540px) {
+  .chat-scan-head { padding-inline: 10px; }
+  .chat-scan-body { padding-inline: 10px; }
+  .chat-scan-meter-detail { flex-wrap: wrap; }
+  .chat-scan-metrics > div { flex-basis: 76px; padding-inline: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-scan-meter[data-measured="false"]::after { animation: none; }
+  .chat-scan-meter > span { transition: none; }
+}

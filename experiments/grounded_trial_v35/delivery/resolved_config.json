@@ -1,0 +1,325 @@
+{
+  "config": {
+    "advanced": {
+      "adaptive_rank": false,
+      "continued_pretraining": false,
+      "full_parameter_finetuning": false,
+      "gradient_diagnostics": true,
+      "group_dro": false,
+      "online_rl": false,
+      "pcgrad": false
+    },
+    "calibration": {
+      "min_negatives": 100
+    },
+    "context": {
+      "consult_target_advisory_for_context_selection": false,
+      "include_callers_callees_and_configuration": true,
+      "long_context_ablation_tokens": 8192,
+      "max_total_tokens": 4096,
+      "ordinary_completion_reserve": 1024,
+      "overlength_policy": "rebuild_valid_view_or_quarantine",
+      "policy": "deterministic_local_snapshot_v1",
+      "repair_completion_reserve": 1536,
+      "silent_truncation": false
+    },
+    "data": {
+      "allow_oracle_context_in_main_evaluation": false,
+      "allow_target_advisory_in_discovery_input": false,
+      "allow_target_patch_in_discovery_input": false,
+      "canonical_format": "parquet",
+      "dataset_version": "grounded_v35",
+      "ecosystems": [
+        "npm",
+        "PyPI",
+        "Maven",
+        "Go",
+        "crates.io",
+        "RubyGems",
+        "Packagist",
+        "NuGet",
+        "Hex"
+      ],
+      "explanation_field": "explanation",
+      "final_refit_default": false,
+      "internal_test_split": false,
+      "languages": "all_supported",
+      "manifest_sha256": "06944485da40a0e50de9a9aff571c3190d94ed730450a513cec2f1a5fa1d38ca",
+      "max_accepted_augmented_views_per_parent": 4,
+      "min_advisory_characters": 200,
+      "min_review_tier": "auto_checked",
+      "pooling": "multi_ecosystem",
+      "preserve_frozen_versions": true,
+      "purpose": "production",
+      "split_before_augmentation": true,
+      "split_policy": "existing_stable_package_hash_plus_issue_leakage_guard",
+      "synthetic_explanation_marker": "explanation",
+      "train_on_validation": false,
+      "train_slice_end": 1.0,
+      "train_slice_start": 0.0,
+      "unreviewed_supervision_weight": 0.0,
+      "validation_fraction_target": 0.05,
+      "validation_roles": {
+        "calibration_fraction": 0.2,
+        "fallback": "grouped_crossfit_or_report_insufficient_data",
+        "selection_fraction": 0.8
+      }
+    },
+    "evaluation": {
+      "greedy_max_new_tokens": 1024,
+      "greedy_primary": true,
+      "illustrative_fpr_operating_points": [
+        0.001,
+        0.01
+      ],
+      "insufficient_negative_sample_action": "report_interval_not_certification",
+      "preserve_all_failed_runs": true,
+      "primary_results_use_actual_selected_output": true,
+      "repair_max_new_tokens": 1536,
+      "report_abstention_and_coverage": true,
+      "report_critical_false_negative_rate": true,
+      "retrieval": "disabled",
+      "same_context_and_budget_across_models": true,
+      "sampled_patch_candidates": 4,
+      "sampled_patch_temperature": 0.2,
+      "sampled_patch_top_p": 0.95,
+      "stronger_model_fallback": false,
+      "threshold_selection": "validation_only"
+    },
+    "leakage": {
+      "disagreement_routing": "val_if_small_else_quarantine",
+      "min_groups_per_role": 10,
+      "near_clone_jaccard": 0.9,
+      "same_repository_edges": true,
+      "small_component_max_groups": 5
+    },
+    "lora": {
+      "bias": "none",
+      "init_loftq": false,
+      "lora_alpha": 128,
+      "lora_dropout": 0.05,
+      "r": 64,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "task_type": "CAUSAL_LM",
+      "train_and_save_decision_head": false,
+      "use_dora": false,
+      "use_rslora": false
+    },
+    "loss": {
+      "decision_head": {
+        "classes": [
+          "vulnerability_supported",
+          "no_supported_finding_in_scope",
+          "insufficient_context"
+        ],
+        "pooling": "last_nonpadding_input_position",
+        "weight_stage_1": 0.0,
+        "weight_stage_2": 0.0
+      },
+      "field_weights": {
+        "decision": 2.0,
+        "evidence": 2.0,
+        "explanation": 1.0,
+        "patch": 2.0,
+        "structure_eos": 0.5,
+        "uncertainty": 1.0
+      },
+      "initial": "per_example_completion_ce",
+      "invariance": {
+        "enabled": false,
+        "weight_if_enabled": 0.05
+      },
+      "next_ablation": "present_field_normalized_ce",
+      "pair": {
+        "enabled_stage_1": false,
+        "enabled_stage_2": false,
+        "independent_version_encoding": true,
+        "margin": 1.0,
+        "rank_weight": 0.02,
+        "unknown_pair_loss": false
+      }
+    },
+    "mining": {
+      "campaign": {
+        "exclude_advisory_kinds": [
+          "malware",
+          "withdrawn"
+        ],
+        "max_requests_per_hour": 4500,
+        "priority": [
+          "PyPI",
+          "Go",
+          "Maven",
+          "Packagist",
+          "RubyGems",
+          "crates.io",
+          "NuGet",
+          "Hex",
+          "npm"
+        ]
+      },
+      "incremental": true,
+      "max_parallel_api_requests": 2,
+      "max_parallel_repository_jobs": 4,
+      "rate_limit_headers_take_precedence": true,
+      "request_timeout_seconds": 30,
+      "resumable": true,
+      "retry_attempts": 5,
+      "teacher_budget": null,
+      "teacher_candidates_initial": 2,
+      "teacher_candidates_maximum": 4,
+      "teacher_enabled": false,
+      "teacher_model": null,
+      "unresolved_examples": "quarantine"
+    },
+    "model": {
+      "add_special_tokens": false,
+      "id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "initialization": "base",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "serialization": "security_chat_v3",
+      "tokenizer_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "train_base_weights": false,
+      "trust_remote_code": false
+    },
+    "precision": {
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "compute_dtype": "auto_bf16_if_supported_else_fp16",
+      "control_if_memory_allows": "bf16_frozen_base_lora",
+      "fp16_loss_scaling": true,
+      "load_in_4bit": true,
+      "mode": "qlora_nf4",
+      "prepare_model_for_kbit_training": true
+    },
+    "preference": {
+      "algorithm": "dpo_with_explicit_sft_replay",
+      "beta": 0.1,
+      "enabled": false,
+      "learning_rate": 5e-06,
+      "max_passes": 1,
+      "reference": "SELECTED_FROZEN_SFT_CHECKPOINT",
+      "replay_weight": 0.1,
+      "verified_ordering_required": true
+    },
+    "runtime": {
+      "session_budget_minutes": null
+    },
+    "sampling": {
+      "decision_pool_targets": {
+        "insufficient_context": 0.2,
+        "reviewed_scoped_negative": 0.4,
+        "supported": 0.4
+      },
+      "empty_core_pool_behavior": "fail",
+      "log_family_exposure": true,
+      "task_shares": {
+        "condition_assessment": 0.0,
+        "discovery": 0.75,
+        "general_code_replay": 0.0,
+        "instruction_integrity": 0.0,
+        "insufficient_context": 0.0,
+        "localization": 0.0,
+        "regression_test_design": 0.0,
+        "repair": 0.25
+      },
+      "task_then_family_then_view": true,
+      "unavailable_pool_behavior": "report_and_explicitly_renormalize"
+    },
+    "schema_version": 1,
+    "student_correction": {
+      "enabled_after_selected_sft": true,
+      "independent_adjudication_required": true,
+      "maximum_relevant_task_share": 0.2,
+      "maximum_rounds": 2,
+      "train_pool_only": true
+    },
+    "training": {
+      "activation_offload": false,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.999,
+      "adam_epsilon": 1e-08,
+      "always_keep_selected_checkpoint": true,
+      "checkpoint_every_minutes": 2,
+      "checkpoint_every_optimizer_steps": 1,
+      "completion_only_loss": true,
+      "early_stopping_patience_evaluations": 2,
+      "effective_sequence_batch_size": 8,
+      "evaluate_at_family_passes": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "evaluate_every_steps": null,
+      "gradient_accumulation_steps": 8,
+      "gradient_checkpointing": true,
+      "keep_recent_checkpoints": 2,
+      "learning_rate": 6e-05,
+      "learning_rate_pilot_values": [
+        5e-05,
+        0.0001
+      ],
+      "length_grouping": true,
+      "lm_loss_chunk_tokens": 512,
+      "mask_prompt_and_padding": true,
+      "max_grad_norm": 1.0,
+      "maximum_pilot_family_passes": 3.0,
+      "micro_batch_tuning": "auto",
+      "optimizer": "adamw_torch",
+      "pack_sequences": false,
+      "packing": false,
+      "per_device_train_batch_size": 1,
+      "pilot_seed": 17,
+      "pin_frozen_weights": false,
+      "save_optimizer_scheduler_rng_sampler_state": true,
+      "scheduler": "cosine",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "selection_policy": "preregistered_validation_operating_point_with_utility_gates",
+      "stage": "field_balanced",
+      "supervise_terminal_eos": true,
+      "use_cache": false,
+      "warmup_ratio": 0.0,
+      "warmup_steps": 8,
+      "weight_decay": 0.01,
+      "world_size": 1
+    },
+    "verification": {
+      "allow_model_to_modify_verifier": false,
+      "default_case_wall_time_seconds": 900,
+      "environment_failure_is_success": false,
+      "execution_scope": "local_isolated_defensive_fixtures",
+      "network_during_tests": false,
+      "patch_candidates_cap": 4,
+      "patch_revision_rounds_cap": 3,
+      "readonly_acceptance_tests": true,
+      "require_before_after_security_check_for_verified_repair": true,
+      "require_functionality_for_verified_repair": true,
+      "resource_limits_required": true
+    }
+  },
+  "config_sha256": "25f5501b9fb70b5080a68ead12d1c5f88a6b364d3818b8b3b7c7e5be8e9ff34c",
+  "contract_sha256": "a78b8f836a9b77258935616ae80f0d0286a30c5a112b402b49243f8761951720",
+  "dataset": {
+    "manifest_sha256": "06944485da40a0e50de9a9aff571c3190d94ed730450a513cec2f1a5fa1d38ca",
+    "status": "frozen",
+    "version": "grounded_v35"
+  },
+  "input_policy_hash": "17fdc8a5833797499656fedfdfd118f6252146dc1343ca5ef22d337ce26f3055",
+  "pinned": {
+    "model_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+    "tokenizer_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242"
+  },
+  "schema": "resolved-config/1"
+}

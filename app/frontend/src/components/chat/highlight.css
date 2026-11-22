@@ -1,0 +1,29 @@
+/* The colours of highlighted code in the chat. They come from the design tokens, so a theme or palette change is a change of one block (index.css), and each pair is one the contrast table
+   measures against the surfaces a code block sits on. */
+.chat-md .hljs-comment,
+.chat-md .hljs-quote { color: var(--faint); font-style: italic; }
+.chat-md .hljs-keyword,
+.chat-md .hljs-selector-tag,
+.chat-md .hljs-literal,
+.chat-md .hljs-built_in,
+.chat-md .hljs-doctag { color: var(--info); }
+.chat-md .hljs-string,
+.chat-md .hljs-regexp,
+.chat-md .hljs-addition { color: var(--warn); }
+.chat-md .hljs-number,
+.chat-md .hljs-symbol,
+.chat-md .hljs-bullet,
+.chat-md .hljs-deletion { color: var(--crit-soft); }
+.chat-md .hljs-title,
+.chat-md .hljs-section { color: var(--fg); font-weight: 600; }
+.chat-md .hljs-attr,
+.chat-md .hljs-attribute,
+.chat-md .hljs-variable,
+.chat-md .hljs-template-variable,
+.chat-md .hljs-type,
+.chat-md .hljs-name,
+.chat-md .hljs-params { color: var(--ok); }
+.chat-md .hljs-meta,
+.chat-md .hljs-punctuation { color: var(--muted); }
+.chat-md .hljs-emphasis { font-style: italic; }
+.chat-md .hljs-strong { font-weight: 700; }

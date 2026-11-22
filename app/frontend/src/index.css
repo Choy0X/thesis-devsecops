@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts are self-hosted and Latin only (an offline desktop app): Inter for the interface, JetBrains Mono for data (imported in App.tsx). */
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./assets/fonts/inter-latin-wght-normal.woff2") format("woff2-variations");
+}
+
+/* Shared Security Workbench tokens. Labels and signs carry severity, check and diff states alongside color. */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+
+  /* surfaces */
+  --bg: #121310;
+  --surface: #191b17;
+  --surface-2: #1e201c;
+  --surface-3: #272921;
+  --terminal: #0d0e0c;
+  /* lines */
+  --border: #373a31;
+  --border-subtle: #2b2e27;
+  --border-strong: #505347;
+  --control-border: #757a6c;
+  /* text */
+  --fg: #eceee4;
+  --muted: #afb2a3;
+  --faint: #929687;
+  /* brand: chrome, focus, primary actions (never a severity fill) */
+  --brand: #ff8479;
+  --brand-strong: #ff8479;
+  --brand-hover: #ff9c91;
+  --on-brand: #1d0e0c;
+  --brand-line: #a4473e;
+  --brand-tint: #2c1c18;
+  --brand-tint-strong: #39221d;
+  /* signals */
+  --info: #52c1e6;
+  --crit: #ff4650;          /* critical red: solid fill + icon + the word only */
+  --crit-soft: #ffb9af;
+  --crit-line: #a4473e;
+  --crit-tint: #2c1c18;
+  --warn: #efc47c;
+  --warn-line: #685435;
+  --warn-tint: #302719;
+  --ok: #b1d296;
+  --ok-soft: #cfe6b8;
+  --ok-line: #506246;
+  --ok-tint: #1d291c;
+  --ok-tint-strong: #293827;
+  /* a code change: green for an added line, red for a removed one (tools/palette_check.py measures both against colour blindness; the + and - signs and the words stay) */
+  --diff-add: var(--ok-soft);
+  --diff-add-bg: var(--ok-tint);
+  --diff-del: var(--crit-soft);
+  --diff-del-bg: var(--crit-tint);
+  /* the severity scale (always with an icon and a label) */
+  --sev-low: var(--muted);
+  --sev-medium: var(--warn);
+  --sev-high: var(--brand-strong);
+  --sev-critical: #ff4650;
+  /* the chart palette (colour-blind safe, none of them red) */
+  --chart-1: #52c1e6;
+  --chart-2: #c6aa39;
+  --chart-3: #518fec;
+  --chart-4: #98e1c4;
+  --chart-5: #ecec51;
+  --chart-6: #8c8c8c;
+  --scroll-hover: #535749;
+
+  /* shape */
+  --radius-sm: 2px;
+  --radius: 3px;
+  --radius-card: 3px;
+  /* shadows (a wide blur is costly to paint without GPU compositing) */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-pop: 0 8px 30px -8px rgba(0, 0, 0, 0.6);
+  /* spacing steps with a meaning */
+  --space-tight: 0.5rem;
+  --space-panel: 1.25rem;
+  --space-gutter: clamp(0.75rem, 2.2vw, 1.75rem);
+  /* the window's own title bar (set by components/TitleBar when the shell opens a frameless window) */
+  --titlebar-h: 0px;
+  /* stacking */
+  --z-header: 10;
+  --z-overlay: 40;
+  --z-dialog: 50;
+  --z-toast: 60;
+  /* motion */
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* the cut corner of a HUD surface (see .chamfer) */
+  --ch: 0px;
+  --ch-sm: 0px;
+  /* effects: a glitch splits a word into the critical red and the info blue for a moment, the rain falls in the brand red, a faint grid sits behind the shell only.
+     Every one of them is one-shot or still, and stops under reduced motion (see the rules at the end of this file and components/kit/motion). */
+  --fx-split-a: var(--crit);
+  --fx-split-b: var(--info);
+  --fx-glitch-dur: 240ms;
+  --fx-rain: var(--brand-strong);
+}
+
+* { border-color: var(--border); }
+.app-workbench-rail { width: 176px; }
+.app-page-header { min-height: 3.1rem; padding-block: 0.55rem; }
+.app-page { padding-block: clamp(0.9rem, 2.25vw, 1.75rem); }
+.app-panel-header { padding: 0.8rem clamp(0.75rem, 1.7vw, 1.25rem); }
+.app-panel-body { padding: clamp(0.75rem, 1.7vw, 1.25rem); }
+.app-tab:focus-visible { outline: 1px solid var(--brand-strong); outline-offset: -2px; }
+.app-workbench-brand { display: flex; min-height: 56px; gap: 8px; align-items: center; padding: 10px 14px; margin-bottom: 6px; background: var(--terminal); border-bottom: 1px solid var(--border); font-size: 1.1rem; letter-spacing: .04em; }
+.app-workbench-mark { display: block; width: 18px; height: 17px; background: var(--brand-strong); clip-path: polygon(0 100%, 31% 0, 69% 0, 100% 100%, 74% 100%, 50% 24%, 26% 100%, 0 100%, 28% 73%, 73% 73%, 79% 91%, 22% 91%); }
+.app-workbench-rail.is-project { width: 50px; }
+.app-workbench-rail.is-project .app-workbench-rail-label { display: none; }
+.app-workbench-rail.is-project nav a { justify-content: center; padding-inline: 2px; }
+@media (max-width: 1199px) {
+  .app-workbench-rail { width: 64px; }
+  .app-workbench-rail .app-workbench-rail-label { display: none; }
+  .app-workbench-rail nav a { justify-content: center; padding-inline: 2px; }
+}
+@media (max-width: 520px) {
+  .app-workbench-rail, .app-workbench-rail.is-project { width: 42px; }
+  .app-workbench-brand { padding-inline: 10px; }
+}
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter Variable", Inter, system-ui, sans-serif;
+  font-feature-settings: "cv05", "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+/* Form controls are found by their outline, so it must reach 3:1 against the surface; the quiet line colour stays for dividers. The selector is more specific than a utility class on
+   purpose: fields are styled in many places and all of them follow this. */
+html body input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), html body select, html body textarea { border-color: var(--control-border); }
+html body input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus, html body select:focus, html body textarea:focus { border-color: var(--brand-strong); }
+
+/* Browser surfaces themed from the palette — not left at defaults. */
+::selection { background: color-mix(in oklab, var(--brand) 40%, transparent); color: var(--fg); }
+:focus-visible { outline: 2px solid var(--brand-strong); outline-offset: 2px; border-radius: 4px; }
+* { caret-color: var(--brand-strong); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); }
+* { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+
+/* Tabular, slashed-zero numerals for all data. */
+.tnum { font-variant-numeric: tabular-nums slashed-zero; }
+
+/* A placeholder is a still block: an endless gradient animation repaints every skeleton on every frame, which is costly without GPU compositing. */
+.skeleton { background: var(--surface-2); }
+/* Motion is off for people who ask for less of it: one-time entrances end at once and nothing loops. */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+/* The same when the window is drawn without the graphics card (Settings, Performance): App.tsx sets data-motion on the document from the saved setting. */
+html[data-motion="reduced"] *, html[data-motion="reduced"] ::before, html[data-motion="reduced"] ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+
+/* The first thing a keyboard reaches: a way past the rail and the header to the page. It is off the screen until it has focus. */
+.skip-link { position: absolute; left: 0.75rem; top: -4rem; z-index: var(--z-toast); padding: 0.5rem 0.9rem; background: var(--brand); color: var(--on-brand); font-size: 0.85rem; font-weight: 600; }
+.skip-link:focus { top: calc(var(--titlebar-h) + 0.5rem); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise var(--dur-slow) var(--ease) backwards; }
+.dot-pulse { animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
+.toast-in { animation: toast-in var(--dur) var(--ease) both; }
+
+/* The layer behind a dialog (components/hud/Scrim). A translucent layer over the whole window made the real window flicker on the graphics card, so with the card the layer is clear and the page
+   behind is dimmed by a filter on its root while a dialog is open; without the card the translucent layer is kept (it never flickered there, and a filter is costly to paint). */
+.scrim { position: fixed; inset: 0; z-index: var(--z-overlay); background: transparent; }
+html[data-motion="reduced"] .scrim { background: color-mix(in srgb, var(--terminal) 80%, transparent); }
+html:not([data-motion="reduced"])[data-scrim] #root { filter: brightness(0.3); }
+
+/* HUD vocabulary, used sparingly: L-shaped corner brackets on panels, hazard stripes on critical dialogs, angled tabs. Nothing here glows or
+   blurs (costly without GPU compositing) and nothing sits behind dense text. */
+.hud-frame { position: relative; }
+/* .hud-brackets is the same corners without the position: use it on something that is already positioned (a fixed dialog): .hud-frame comes after the utilities and would turn `fixed` into `relative`. */
+.hud-frame::before, .hud-frame::after, .hud-brackets::before, .hud-brackets::after { content: ""; position: absolute; width: 10px; height: 10px; border: 0 solid var(--brand-line); pointer-events: none; }
+.hud-frame::before, .hud-brackets::before { top: -1px; left: -1px; border-top-width: 1px; border-left-width: 1px; }
+.hud-frame::after, .hud-brackets::after { bottom: -1px; right: -1px; border-bottom-width: 1px; border-right-width: 1px; }
+.hazard { background-image: repeating-linear-gradient(135deg, var(--crit) 0 8px, var(--bg) 8px 16px); }
+.tab-angled { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%); }
+.progress-seg { transform: skewX(-18deg); }
+
+/* A cut corner, the shape of the reference consoles. .chamfer cuts the top left and the bottom right corner by --ch, .chamfer-r the top right and the bottom left, and the -sm variants
+   use --ch-sm. A clip-path leaves the cut without an outline, so each cut is drawn as a hairline in --ch-line from the element's own background (a border and a surface colour are set
+   as usual). A focus ring would be clipped by the shape as well, so it is drawn inside the element. */
+/* --ch-line is read with a fallback and never set here, so that a utility such as [--ch-line:var(--brand-strong)] on the element decides it (these rules come after the utilities). */
+.chamfer, .chamfer-sm, .chamfer-r, .chamfer-r-sm { background-repeat: no-repeat; background-origin: border-box; background-size: var(--cut) var(--cut), var(--cut) var(--cut); }
+.chamfer, .chamfer-sm { background-position: top left, bottom right;
+  background-image:
+    linear-gradient(to bottom right, transparent 50%, var(--ch-line, var(--control-border)) 50%, var(--ch-line, var(--control-border)) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1.5px), var(--ch-line, var(--control-border)) calc(50% - 1.5px), var(--ch-line, var(--control-border)) 50%, transparent 50%); }
+.chamfer-r, .chamfer-r-sm { background-position: top right, bottom left;
+  background-image:
+    linear-gradient(to top right, transparent calc(50% - 1.5px), var(--ch-line, var(--control-border)) calc(50% - 1.5px), var(--ch-line, var(--control-border)) 50%, transparent 50%),
+    linear-gradient(to top right, transparent 50%, var(--ch-line, var(--control-border)) 50%, var(--ch-line, var(--control-border)) calc(50% + 1.5px), transparent calc(50% + 1.5px)); }
+.chamfer { --cut: var(--ch); clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut)); }
+.chamfer-sm { --cut: var(--ch-sm); clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut)); }
+.chamfer-r { --cut: var(--ch); clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))); }
+.chamfer-r-sm { --cut: var(--ch-sm); clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))); }
+.chamfer-none { clip-path: none; background-image: none; }          /* after the rules above on purpose: a small part of a chamfered control (a stepper button) is square */
+.chamfer:focus-visible, .chamfer-sm:focus-visible, .chamfer-r:focus-visible, .chamfer-r-sm:focus-visible { outline-offset: -2px; }
+
+/* Compact telemetry labels use the same readable case and spacing as the controls. */
+.caps { font-family: inherit; font-size: 0.76rem; font-weight: 500; letter-spacing: normal; }
+
+/* The glitch of a word (components/kit/Glitch): two copies of the text in the split colours are shifted for one short burst while the component holds data-glitch="on", and the
+   real, visible text tears into horizontal bands that jump sideways by a different amount each (a flat colour-only split, or a uniform shake, both read as timid on their own) --
+   no fill, no box, nothing behind the glyphs: only the glyphs themselves move. The component allows one burst per second at most. */
+.glitch { position: relative; display: inline-block; }
+.glitch::before, .glitch::after { content: attr(data-text); position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+.glitch[data-glitch="on"]::before { color: var(--fx-split-a); animation: glitch-a var(--fx-glitch-dur) steps(1, end) 1 both; }
+.glitch[data-glitch="on"]::after { color: var(--fx-split-b); animation: glitch-b var(--fx-glitch-dur) steps(1, end) 1 both; }
+.glitch[data-glitch="on"] > [aria-hidden] { animation: glitch-tear var(--fx-glitch-dur) steps(1, end) 1 both; }
+@keyframes glitch-a {
+  0% { opacity: 0.85; transform: translate(-2px, 0); clip-path: inset(0 0 60% 0); }
+  34% { opacity: 0.85; transform: translate(2px, 0); clip-path: inset(45% 0 20% 0); }
+  67% { opacity: 0.85; transform: translate(-1px, 0); clip-path: inset(15% 0 55% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0); }
+}
+@keyframes glitch-b {
+  0% { opacity: 0.85; transform: translate(2px, 0); clip-path: inset(50% 0 10% 0); }
+  34% { opacity: 0.85; transform: translate(-2px, 0); clip-path: inset(10% 0 60% 0); }
+  67% { opacity: 0.85; transform: translate(1px, 0); clip-path: inset(55% 0 15% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0); }
+}
+/* A different horizontal band of the glyphs is clipped into view and displaced at each step -- a real tear, not a wobble -- settling back whole by the end. */
+@keyframes glitch-tear {
+  0% { clip-path: inset(0 0 88% 0); transform: translate(4px, 0); }
+  12% { clip-path: inset(10% 0 76% 0); transform: translate(-5px, 0); }
+  24% { clip-path: inset(22% 0 62% 0); transform: translate(3px, 0); }
+  36% { clip-path: inset(34% 0 48% 0); transform: translate(-4px, 0); }
+  48% { clip-path: inset(46% 0 34% 0); transform: translate(5px, 0); }
+  60% { clip-path: inset(58% 0 22% 0); transform: translate(-3px, 0); }
+  72% { clip-path: inset(70% 0 10% 0); transform: translate(4px, 0); }
+  84% { clip-path: inset(82% 0 0 0); transform: translate(-2px, 0); }
+  100% { clip-path: inset(0); transform: none; }
+}
+
+/* An always-on, slow brightness pulse for a mark that should read as a live readout even between glitch bursts -- a neon-sign flicker, two quick dips, not a smooth breathe.
+   Independent of .glitch's own burst state (applied alongside it, not instead of it); stops under reduced motion with the rest (index.css's blanket rule, above). */
+.fx-idle-flicker { animation: fx-idle-flicker 5s ease-in-out infinite; }
+@keyframes fx-idle-flicker {
+  0%, 100% { opacity: 1; }
+  41% { opacity: 1; }
+  42% { opacity: 0.55; }
+  43% { opacity: 1; }
+  63% { opacity: 1; }
+  64% { opacity: 0.7; }
+  65% { opacity: 0.92; }
+  66% { opacity: 1; }
+}
+
+/* A terminal cursor block, blinking steadily -- the classic "waiting for input" tell. */
+.fx-cursor { display: inline-block; width: 0.5em; height: 0.9em; margin-left: 0.15em; vertical-align: -0.1em; background: currentColor; animation: fx-cursor-blink 1.1s steps(1, end) infinite; }
+@keyframes fx-cursor-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }

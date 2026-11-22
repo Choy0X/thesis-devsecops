@@ -1,0 +1,128 @@
+mixed_labels: flagged answers whose summary does not begin with the violated_invariant (a sign of two templates in one answer); not meaningful for the original model.
+
+## ALL CASES
+| measure | v40b |
+|---|---|
+| valid_json | 390/391 (0.99-1.00) |
+| finding_found | 122/183 (0.60-0.73) |
+| right_class | 100/183 (0.47-0.62) |
+| quote_grounded | 120/183 (0.58-0.72) |
+| negative_correct | 150/200 (0.69-0.80) |
+| finding_found_repair | 8/8 (0.68-1.00) |
+| patch_exact | 6/8 (0.41-0.93) |
+| patch_ignoring_line_numbers | 6/8 (0.41-0.93) |
+| mixed_labels | 180/180 (0.98-1.00) |
+
+## DEVELOPMENT
+| measure | v40b |
+|---|---|
+| valid_json | 275/275 (0.99-1.00) |
+| finding_found | 89/129 (0.61-0.76) |
+| right_class | 77/129 (0.51-0.68) |
+| quote_grounded | 88/129 (0.60-0.76) |
+| negative_correct | 94/138 (0.60-0.75) |
+| finding_found_repair | 8/8 (0.68-1.00) |
+| patch_exact | 6/8 (0.41-0.93) |
+| patch_ignoring_line_numbers | 6/8 (0.41-0.93) |
+| mixed_labels | 141/141 (0.97-1.00) |
+
+## TRANSFER (SSRF, never trained)
+| measure | v40b |
+|---|---|
+| valid_json | 115/116 (0.95-1.00) |
+| finding_found | 33/54 (0.48-0.73) |
+| right_class | 23/54 (0.30-0.56) |
+| quote_grounded | 32/54 (0.46-0.71) |
+| negative_correct | 56/62 (0.80-0.95) |
+| mixed_labels | 39/39 (0.91-1.00) |
+
+## BY KIND (answer correct = expected status; positives also need the class)
+| kind | v40b |
+|---|---|
+| discovery_open | 14/63 |
+| discovery_scoped | 55/64 |
+| discovery_set | 31/56 |
+| negative_fixed | 45/63 |
+| negative_fixed_open | 46/63 |
+| negative_fixed_set | 42/55 |
+| negative_neighbour_open | 1/1 |
+| negative_other_class | 9/10 |
+| negative_other_set | 7/8 |
+| repair | 4/4 |
+| repair_open | 4/4 |
+
+## FUNCTIONS
+v40b: 199 functions; fully right on 81, wrong on some view on 118
+
+## BY LANGUAGE (positives flagged with the right class / clean cases answered no_finding)
+| language | v40b |
+|---|---|
+| c | 21/40 ; 23/40 |
+| cpp | 4/8 ; 3/8 |
+| go | 4/9 ; 4/9 |
+| java | 4/8 ; 3/8 |
+| javascript | 17/23 ; 20/28 |
+| php | 2/8 ; 8/8 |
+| python | 20/43 ; 46/49 |
+| ruby | 3/8 ; 6/8 |
+| rust | 3/8 ; 6/8 |
+| typescript | 22/28 ; 31/34 |
+
+## BY PROOF STRENGTH (positives flagged with the right class / clean cases answered no_finding; never merged into one number)
+| proof | v40b |
+|---|---|
+| diff_guard | 11/14 ; 10/14 |
+| diff_sink | 7/19 ; 11/19 |
+| flow_proved | 61/96 ; 97/113 |
+| strict_attribution | 21/54 ; 32/54 |
+
+## BY SCOPE FORM (share of "finding" answers; vulnerable code should be flagged in every form, clean code in none)
+| form / code | v40b |
+|---|---|
+| open / vulnerable | 36/67 (0.42-0.65) |
+| open / clean | 17/64 (0.17-0.38) |
+| single / vulnerable | 59/68 (0.77-0.93) |
+| single / clean | 19/73 (0.17-0.37) |
+| set / vulnerable | 35/56 (0.49-0.74) |
+| set / clean | 14/63 (0.14-0.34) |
+
+## SCOPE-SWAP (the same code under different scope forms): functions in 2+ forms / same verdict in every form / right in every form
+| code | v40b |
+|---|---|
+| vulnerable | 1 / 1 / 1 |
+| fixed | 2 / 2 / 1 |
+
+## DISCRIMINATION (functions with both a vulnerable and a fixed view): functions / vulnerable flagged and fixed cleared / flags both / clears both
+| form | v40b |
+|---|---|
+| open | 61 / 14 / 16 / 30 |
+| single | 62 / 35 / 18 / 9 |
+| set | 55 / 21 / 13 / 21 |
+| all forms | 178 / 70 / 47 / 60 |
+| all forms, claim gate on | 178 / 68 / 43 / 64 |
+| same verdict on both twins (flags both + clears both) | 107 of 178 |
+| of the separated pairs, fixed twin has no valid answer | 0 |
+
+## TWIN ORDERING (logged status gap, finding minus no_finding; pairs where the vulnerable view scores above its fixed twin; Wilson interval ignores clustering by function)
+| pairs | v40b |
+|---|---|
+| all | 151.5/178 (0.79-0.90) |
+| proved | 59/61 (0.89-0.99) |
+| independent | 92.5/117 (0.71-0.85) |
+
+## CLAIM GATE (training/finetune/grounded_claim_gate.py): findings given / talk about the fix / hard failures (fix talk or a quote that is not a line) / soft (a name not shown)
+| | v40b |
+|---|---|
+| findings / narrate the fix / hard / soft | 180 / 0 / 8 / 6 |
+| hard failures after completing cut quotes (backend step; raw count above) / quotes completed | 6 / 2 |
+| vulnerable flagged, gate on | 116/183 (0.56-0.70) |
+| right class, gate on | 96/183 (0.45-0.60) |
+| clean cleared, gate on | 152/200 (0.70-0.81) |
+
+## HELD-OUT CLASS (transfer positives): cases / flagged / right class / class named is a catalogue title
+| form | v40b |
+|---|---|
+| open | 19 / 10 / 2 / 10 |
+| single | 18 / 15 / 15 / 15 |
+| set | 17 / 8 / 6 / 8 |
+
