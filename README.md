@@ -2,7 +2,7 @@
 
 This repository accompanies *AI-Driven Autonomous Vulnerability Detection, Proactive CVE Prediction, and Self-Patching Framework for Software Dependencies and Codebases*, a Computer Science BSc thesis by Zoubairy Marouane at the University of Debrecen.
 
-[Read the thesis draft](thesis/thesis.pdf). This is the 55-page version reviewed in November 2026. The thesis describes the framework, the data mining and training procedures, the evaluation, and the use of AI tools.
+[Read the thesis draft](thesis/thesis.pdf). This is the 40-page revision prepared after the November 2026 supervisor review. The thesis describes the framework, the data mining and training procedures, the evaluation, and the use of AI tools.
 
 ## Run the desktop application
 
@@ -31,5 +31,7 @@ To run the backend tests, install `requirements-dev.txt` in the same environment
 ## Experiment records
 
 The [experiment directories](experiments) contain training configurations, evaluation plans, score reports, and per-view decisions for selected runs. The final adapter's [scored views](experiments/grounded_eval_v40a/scored_views.json) and [second-stage scores](experiments/grounded_eval_v40b/scored_views.json) each cover 391 evaluation views. The [matched-view scores](experiments/local_matched/scored_views.json) cover the 86 inputs used to compare the local base model and adapter. Run `python experiments/local_matched/score_pairs.py` to reproduce the local matched-pair totals. A view is one evaluation input. Several views can represent the same underlying code unit.
+
+The [training record](experiments/training-record.md) summarizes the experimental runs and recipes. From the repository root, `python experiments/full_pair_scores.py` reproduces the full-pair and detection scores. With NumPy and SciPy installed, `python experiments/paired_uncertainty.py` reproduces the grouped intervals and paired checkpoint test.
 
 The [dated acceptance rule](notes/grounded_v40/PRE_DECLARED_RULE.md) records the criteria set before training. The count files beside it report mining yields by weakness class. Local dataset paths are omitted from the configuration copies. Raw mined code, blind-partition inputs, trained weights, and execution logs are held separately.
