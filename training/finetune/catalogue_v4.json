@@ -1,0 +1,174 @@
+{
+ "protocol": "security_chat_v4",
+ "catalogue": [
+  [
+   "CWE-22",
+   "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)"
+  ],
+  [
+   "CWE-78",
+   "Improper Neutralization of Special Elements used in an OS Command (OS Command Injection)"
+  ],
+  [
+   "CWE-79",
+   "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)"
+  ],
+  [
+   "CWE-89",
+   "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)"
+  ],
+  [
+   "CWE-94",
+   "Improper Control of Generation of Code (Code Injection)"
+  ],
+  [
+   "CWE-113",
+   "Improper Neutralization of CRLF Sequences in HTTP Headers (HTTP Response Splitting)"
+  ],
+  [
+   "CWE-200",
+   "Exposure of Sensitive Information to an Unauthorized Actor"
+  ],
+  [
+   "CWE-295",
+   "Improper Certificate Validation"
+  ],
+  [
+   "CWE-327",
+   "Use of a Broken or Risky Cryptographic Algorithm"
+  ],
+  [
+   "CWE-352",
+   "Cross-Site Request Forgery (CSRF)"
+  ],
+  [
+   "CWE-400",
+   "Uncontrolled Resource Consumption"
+  ],
+  [
+   "CWE-502",
+   "Deserialization of Untrusted Data"
+  ],
+  [
+   "CWE-601",
+   "URL Redirection to Untrusted Site (Open Redirect)"
+  ],
+  [
+   "CWE-611",
+   "Improper Restriction of XML External Entity Reference"
+  ],
+  [
+   "CWE-862",
+   "Missing Authorization"
+  ],
+  [
+   "CWE-918",
+   "Server-Side Request Forgery (SSRF)"
+  ],
+  [
+   "CWE-1321",
+   "Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution)"
+  ],
+  [
+   "CWE-1333",
+   "Inefficient Regular Expression Complexity"
+  ],
+  [
+   "CWE-1336",
+   "Improper Neutralization of Special Elements Used in a Template Engine"
+  ],
+  [
+   "CWE-20",
+   "Improper Input Validation"
+  ],
+  [
+   "CWE-306",
+   "Missing Authentication for Critical Function"
+  ],
+  [
+   "CWE-74",
+   "Improper Neutralization of Special Elements in Output Used by a Downstream Component (Injection)"
+  ],
+  [
+   "CWE-532",
+   "Insertion of Sensitive Information into Log File"
+  ],
+  [
+   "CWE-269",
+   "Improper Privilege Management"
+  ],
+  [
+   "CWE-116",
+   "Improper Encoding or Escaping of Output"
+  ],
+  [
+   "CWE-59",
+   "Improper Link Resolution Before File Access (Link Following)"
+  ],
+  [
+   "CWE-345",
+   "Insufficient Verification of Data Authenticity"
+  ],
+  [
+   "CWE-444",
+   "Inconsistent Interpretation of HTTP Requests (HTTP Request/Response Smuggling)"
+  ],
+  [
+   "CWE-346",
+   "Origin Validation Error"
+  ],
+  [
+   "CWE-668",
+   "Exposure of Resource to Wrong Sphere"
+  ],
+  [
+   "CWE-693",
+   "Protection Mechanism Failure"
+  ],
+  [
+   "CWE-732",
+   "Incorrect Permission Assignment for Critical Resource"
+  ],
+  [
+   "CWE-330",
+   "Use of Insufficiently Random Values"
+  ],
+  [
+   "CWE-754",
+   "Improper Check for Unusual or Exceptional Conditions"
+  ],
+  [
+   "CWE-1284",
+   "Improper Validation of Specified Quantity in Input"
+  ],
+  [
+   "CWE-522",
+   "Insufficiently Protected Credentials"
+  ],
+  [
+   "CWE-915",
+   "Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+  ]
+ ],
+ "aliases": {
+  "CWE-284": "CWE-862",
+  "CWE-285": "CWE-862",
+  "CWE-287": "CWE-306",
+  "CWE-639": "CWE-862",
+  "CWE-674": "CWE-400",
+  "CWE-77": "CWE-78",
+  "CWE-770": "CWE-400",
+  "CWE-835": "CWE-400",
+  "CWE-863": "CWE-862"
+ },
+ "held_out": [
+  "CWE-918",
+  "CWE-94"
+ ],
+ "minimum_units": 15,
+ "limit": 45,
+ "source": {
+  "ledger": "grounded_recovery_ledger.json",
+  "classes_counted": 325
+ }
+}

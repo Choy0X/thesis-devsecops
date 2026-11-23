@@ -1,0 +1,357 @@
+{
+  "schema": "toolkit-lock/1",
+  "resolved_at": "2026-10-10T03:30:14Z",
+  "image_tag": "aivdf/scan-tools:1",
+  "python": "3.11",
+  "bases": {
+    "python": {
+      "ref": "python:3.11-slim",
+      "pinned": "python@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce",
+      "id": "sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce",
+      "size_mb": 187
+    },
+    "node": {
+      "ref": "node:20-slim",
+      "pinned": "node@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0",
+      "id": "sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0",
+      "size_mb": 290
+    },
+    "gitleaks": {
+      "ref": "ghcr.io/gitleaks/gitleaks:latest",
+      "pinned": "ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f",
+      "id": "sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f",
+      "size_mb": 77
+    }
+  },
+  "python_packages": {
+    "venv": {
+      "count": 49,
+      "requirements_lock_sha256": "5e15ba127c6b0536817b087e62f8faeb609a632aeebc40a9fba40f354af53403",
+      "tools": [
+        {
+          "name": "bandit",
+          "version": "1.9.4",
+          "file": "bandit-1.9.4-py3-none-any.whl",
+          "sha256": "f89ffa663767f5a0585ea075f01020207e966a9c0f2b9ef56a57c7963a3f6f8e",
+          "licence": "Apache-2.0",
+          "bytes": 134741
+        },
+        {
+          "name": "semgrep",
+          "version": "1.136.0",
+          "file": "semgrep-1.136.0-cp39.cp310.cp311.py39.py310.py311-none-musllinux_1_0_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "94dbd9a9f145ebd192441d5d826a1fba485f87496f353c5ba24ad2e16bc250ed",
+          "licence": "LGPL-2.1",
+          "bytes": 49484485
+        }
+      ]
+    },
+    "test": {
+      "count": 7,
+      "requirements_lock_sha256": "7d8d40ba4dd38db4a8cddcc8681d53bd8df4c35cadd9847a46b04c7d59202b59",
+      "tools": [
+        {
+          "name": "coverage",
+          "version": "7.16.2",
+          "file": "coverage-7.16.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+          "sha256": "db5f8394e17f877a625b257f2ba0ce8e728a499c2c1579ad66220272cd3df510",
+          "licence": "Apache-2.0",
+          "bytes": 256627
+        },
+        {
+          "name": "pytest",
+          "version": "9.1.1",
+          "file": "pytest-9.1.1-py3-none-any.whl",
+          "sha256": "37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c",
+          "licence": "MIT",
+          "bytes": 386536
+        }
+      ]
+    }
+  },
+  "npm_packages": {
+    "count": 98,
+    "package_lock_sha256": "ef99eb251707fc40bfba52841bc9524d83206536bc23e157af1ad911698fbb3b",
+    "tools": [
+      {
+        "name": "eslint",
+        "version": "10.12.0",
+        "licence": "MIT",
+        "integrity": "sha512-npHjrHb2o4ehH3mE+YuxABR+0gyb0aVWCIolgJDArwCiHEIsonBm3ZKjel5b0U5+a+MbEvIyRCGCzD3eKKK2NA=="
+      },
+      {
+        "name": "eslint-plugin-security",
+        "version": "4.2.0",
+        "licence": "Apache-2.0",
+        "integrity": "sha512-LL5jbxRzlNv0vkSyBtbO7qAPofqd3xlseAFTDevyDTMmScjBrLv2/VkQ7ZFQxBaFYsa3dhpE7NcV+JkwJ9l6RQ=="
+      },
+      {
+        "name": "typescript-eslint",
+        "version": "8.71.1",
+        "licence": "MIT",
+        "integrity": "sha512-oiNVPC3/NbV1FpaHU07l8O6ynqG9v4PAiW2WvTrAmZdR0f2HI/gE668ElMLCK7Xbsu5k2fK5C4fXNiq05j7/nQ=="
+      },
+      {
+        "name": "typescript",
+        "version": "6.0.3",
+        "licence": "Apache-2.0",
+        "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
+      }
+    ]
+  },
+  "rules": {
+    "commit": "9bbf021d0acffa3095fcffd17b2bc7787eb4796d",
+    "repo": "https://github.com/semgrep/semgrep-rules",
+    "dirs": [
+      "python",
+      "javascript",
+      "typescript"
+    ],
+    "files": 537,
+    "licence_file": "LICENSE"
+  },
+  "licences": {
+    "approved": {
+      "semgrep": [
+        "LGPL-2.1"
+      ],
+      "bandit": [
+        "Apache-2.0"
+      ],
+      "pytest": [
+        "MIT"
+      ],
+      "coverage": [
+        "Apache-2.0"
+      ],
+      "eslint": [
+        "MIT"
+      ],
+      "eslint-plugin-security": [
+        "Apache-2.0",
+        "MIT"
+      ],
+      "typescript-eslint": [
+        "MIT"
+      ],
+      "typescript": [
+        "Apache-2.0"
+      ]
+    },
+    "flags": [],
+    "all_python": [
+      [
+        "attrs",
+        "MIT"
+      ],
+      [
+        "bandit",
+        "Apache-2.0"
+      ],
+      [
+        "boltons",
+        "BSD"
+      ],
+      [
+        "bracex",
+        "MIT"
+      ],
+      [
+        "certifi",
+        "MPL-2.0"
+      ],
+      [
+        "charset-normalizer",
+        "MIT"
+      ],
+      [
+        "click",
+        "BSD"
+      ],
+      [
+        "click-option-group",
+        "BSD"
+      ],
+      [
+        "colorama",
+        "BSD"
+      ],
+      [
+        "coverage",
+        "Apache-2.0"
+      ],
+      [
+        "defusedxml",
+        "PSFL"
+      ],
+      [
+        "deprecated",
+        "MIT"
+      ],
+      [
+        "exceptiongroup",
+        "MIT"
+      ],
+      [
+        "face",
+        "unknown"
+      ],
+      [
+        "glom",
+        "BSD"
+      ],
+      [
+        "googleapis-common-protos",
+        "Apache-2.0"
+      ],
+      [
+        "idna",
+        "BSD"
+      ],
+      [
+        "importlib-metadata",
+        "Apache-2.0"
+      ],
+      [
+        "iniconfig",
+        "MIT"
+      ],
+      [
+        "jsonschema",
+        "MIT"
+      ],
+      [
+        "jsonschema-specifications",
+        "MIT"
+      ],
+      [
+        "markdown-it-py",
+        "MIT"
+      ],
+      [
+        "mdurl",
+        "MIT"
+      ],
+      [
+        "opentelemetry-api",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-exporter-otlp-proto-common",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-exporter-otlp-proto-http",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-instrumentation",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-instrumentation-requests",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-proto",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-sdk",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-semantic-conventions",
+        "Apache-2.0"
+      ],
+      [
+        "opentelemetry-util-http",
+        "Apache-2.0"
+      ],
+      [
+        "packaging",
+        "Apache-2.0"
+      ],
+      [
+        "peewee",
+        "unknown"
+      ],
+      [
+        "pluggy",
+        "MIT"
+      ],
+      [
+        "protobuf",
+        "BSD"
+      ],
+      [
+        "pygments",
+        "BSD"
+      ],
+      [
+        "pytest",
+        "MIT"
+      ],
+      [
+        "pyyaml",
+        "MIT"
+      ],
+      [
+        "referencing",
+        "MIT"
+      ],
+      [
+        "requests",
+        "Apache-2.0"
+      ],
+      [
+        "rich",
+        "MIT"
+      ],
+      [
+        "rpds-py",
+        "MIT"
+      ],
+      [
+        "ruamel-yaml",
+        "MIT"
+      ],
+      [
+        "semgrep",
+        "LGPL-2.1"
+      ],
+      [
+        "setuptools",
+        "MIT"
+      ],
+      [
+        "stevedore",
+        "Apache-2.0"
+      ],
+      [
+        "tomli",
+        "MIT"
+      ],
+      [
+        "typing-extensions",
+        "PSF-2.0"
+      ],
+      [
+        "urllib3",
+        "MIT"
+      ],
+      [
+        "wcmatch",
+        "MIT"
+      ],
+      [
+        "wrapt",
+        "BSD"
+      ],
+      [
+        "zipp",
+        "MIT"
+      ]
+    ]
+  }
+}

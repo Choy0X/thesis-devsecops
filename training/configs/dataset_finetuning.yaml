@@ -1,0 +1,258 @@
+# Project-level configuration for data preparation and fine-tuning.
+#
+# This is the single authoritative file: the backend, workers, training export,
+# evaluator, UI and notebooks all read it through training/finetune/config.py
+# (typed, unknown keys rejected). It is a contract, not a file that can be passed
+# unmodified to a trainer: RESOLVE_* placeholders are pinned by `resolve()` into a
+# per-run resolved_config.json, and only supported values are translated into the
+# installed library APIs. Values below are starting configurations, not measured
+# optima. A flag for an unimplemented method is rejected, never silently ignored.
+#
+# Owner direction 2026-10-06 (recorded in notes/OPEN_DECISIONS.md, not approved by
+# the supervisor): the dataset is multi-ecosystem. `data.ecosystems` lists the
+# enabled adapters; results are always reported per ecosystem and per language.
+schema_version: 1
+
+model:
+  id: Qwen/Qwen2.5-Coder-7B
+  revision: RESOLVE_AND_PIN_COMMIT
+  tokenizer_revision: RESOLVE_AND_PIN_COMMIT
+  initialization: base
+  trust_remote_code: false
+  serialization: plain_prompt_completion_v1
+  add_special_tokens: false
+  train_base_weights: false
+
+data:
+  ecosystems: [npm, PyPI, Maven, Go, crates.io, RubyGems, Packagist, NuGet, Hex]
+  languages: all_supported
+  pooling: multi_ecosystem
+  purpose: production
+  min_review_tier: auto_checked
+  preserve_frozen_versions: true
+  dataset_version: NEXT_UNUSED_VERSION
+  manifest_sha256: RESOLVE_AFTER_BUILD
+  canonical_format: parquet
+  min_advisory_characters: 200
+  explanation_field: explanation
+  synthetic_explanation_marker: explanation
+  unreviewed_supervision_weight: 0.0
+  split_before_augmentation: true
+  split_policy: existing_stable_package_hash_plus_issue_leakage_guard
+  validation_fraction_target: 0.05
+  internal_test_split: false
+  validation_roles:
+    selection_fraction: 0.80
+    calibration_fraction: 0.20
+    fallback: grouped_crossfit_or_report_insufficient_data
+  train_on_validation: false
+  final_refit_default: false
+  max_accepted_augmented_views_per_parent: 4
+  allow_target_advisory_in_discovery_input: false
+  allow_target_patch_in_discovery_input: false
+  allow_oracle_context_in_main_evaluation: false
+
+leakage:
+  near_clone_jaccard: 0.9
+  same_repository_edges: true
+  small_component_max_groups: 5
+  disagreement_routing: val_if_small_else_quarantine
+  min_groups_per_role: 10
+
+mining:
+  incremental: true
+  resumable: true
+  max_parallel_repository_jobs: 4
+  max_parallel_api_requests: 2
+  request_timeout_seconds: 30
+  retry_attempts: 5
+  rate_limit_headers_take_precedence: true
+  teacher_enabled: false
+  teacher_model: null
+  teacher_budget: null
+  teacher_candidates_initial: 2
+  teacher_candidates_maximum: 4
+  unresolved_examples: quarantine
+  campaign:
+    exclude_advisory_kinds: [malware, withdrawn]
+    priority: [PyPI, Go, Maven, Packagist, RubyGems, crates.io, NuGet, Hex, npm]
+    max_requests_per_hour: 4500
+
+context:
+  policy: deterministic_local_snapshot_v1
+  include_callers_callees_and_configuration: true
+  consult_target_advisory_for_context_selection: false
+  max_total_tokens: 4096
+  ordinary_completion_reserve: 1024
+  repair_completion_reserve: 1536
+  long_context_ablation_tokens: 8192
+  silent_truncation: false
+  overlength_policy: rebuild_valid_view_or_quarantine
+
+sampling:
+  task_then_family_then_view: true
+  task_shares:
+    discovery: 0.30
+    condition_assessment: 0.15
+    localization: 0.10
+    repair: 0.20
+    insufficient_context: 0.10
+    general_code_replay: 0.10
+    instruction_integrity: 0.05
+  decision_pool_targets:
+    supported: 0.40
+    reviewed_scoped_negative: 0.40
+    insufficient_context: 0.20
+  unavailable_pool_behavior: report_and_explicitly_renormalize
+  empty_core_pool_behavior: fail
+  log_family_exposure: true
+
+precision:
+  mode: qlora_nf4
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  compute_dtype: auto_bf16_if_supported_else_fp16
+  fp16_loss_scaling: true
+  prepare_model_for_kbit_training: true
+  control_if_memory_allows: bf16_frozen_base_lora
+
+lora:
+  r: 64
+  lora_alpha: 128
+  lora_dropout: 0.05
+  bias: none
+  task_type: CAUSAL_LM
+  use_rslora: false
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  train_and_save_decision_head: true
+
+training:
+  stage: sft_control
+  seeds: [17, 29, 43]
+  pilot_seed: 17
+  per_device_train_batch_size: 1
+  effective_sequence_batch_size: 32
+  world_size: 1
+  gradient_accumulation_steps: 32
+  optimizer: adamw_torch
+  learning_rate: 0.0001
+  learning_rate_pilot_values: [0.00005, 0.0001]
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 0.00000001
+  weight_decay: 0.01
+  scheduler: cosine
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+  maximum_pilot_family_passes: 3
+  evaluate_at_family_passes: [0.5, 1.0, 2.0, 3.0]
+  early_stopping_patience_evaluations: 2
+  selection_policy: preregistered_validation_operating_point_with_utility_gates
+  gradient_checkpointing: true
+  use_cache: false
+  packing: false
+  completion_only_loss: true
+  mask_prompt_and_padding: true
+  supervise_terminal_eos: true
+  save_optimizer_scheduler_rng_sampler_state: true
+  checkpoint_every_optimizer_steps: 50
+  checkpoint_every_minutes: 10
+  keep_recent_checkpoints: 2
+  always_keep_selected_checkpoint: true
+
+runtime:
+  session_budget_minutes: null
+
+loss:
+  initial: per_example_completion_ce
+  next_ablation: present_field_normalized_ce
+  field_weights:
+    decision: 2.0
+    evidence: 2.0
+    explanation: 1.0
+    uncertainty: 1.0
+    patch: 2.0
+    structure_eos: 0.25
+  decision_head:
+    classes: [vulnerability_supported, no_supported_finding_in_scope, insufficient_context]
+    pooling: last_nonpadding_input_position
+    weight_stage_1: 0.0
+    weight_stage_2: 0.2
+  pair:
+    enabled_stage_1: false
+    enabled_stage_2: true
+    margin: 1.0
+    rank_weight: 0.02
+    independent_version_encoding: true
+    unknown_pair_loss: false
+  invariance:
+    enabled: false
+    weight_if_enabled: 0.05
+
+calibration:
+  min_negatives: 100
+
+student_correction:
+  enabled_after_selected_sft: true
+  train_pool_only: true
+  maximum_rounds: 2
+  maximum_relevant_task_share: 0.20
+  independent_adjudication_required: true
+
+preference:
+  enabled: false
+  algorithm: dpo_with_explicit_sft_replay
+  beta: 0.1
+  learning_rate: 0.000005
+  max_passes: 1
+  replay_weight: 0.1
+  reference: SELECTED_FROZEN_SFT_CHECKPOINT
+  verified_ordering_required: true
+
+advanced:
+  online_rl: false
+  continued_pretraining: false
+  full_parameter_finetuning: false
+  pcgrad: false
+  group_dro: false
+  adaptive_rank: false
+  gradient_diagnostics: true
+
+verification:
+  execution_scope: local_isolated_defensive_fixtures
+  network_during_tests: false
+  readonly_acceptance_tests: true
+  allow_model_to_modify_verifier: false
+  require_before_after_security_check_for_verified_repair: true
+  require_functionality_for_verified_repair: true
+  environment_failure_is_success: false
+  patch_candidates_cap: 4
+  patch_revision_rounds_cap: 3
+  default_case_wall_time_seconds: 900
+  resource_limits_required: true
+
+evaluation:
+  retrieval: disabled
+  same_context_and_budget_across_models: true
+  stronger_model_fallback: false
+  greedy_primary: true
+  greedy_max_new_tokens: 1024
+  repair_max_new_tokens: 1536
+  sampled_patch_candidates: 4
+  sampled_patch_temperature: 0.2
+  sampled_patch_top_p: 0.95
+  threshold_selection: validation_only
+  illustrative_fpr_operating_points: [0.001, 0.01]
+  insufficient_negative_sample_action: report_interval_not_certification
+  report_critical_false_negative_rate: true
+  report_abstention_and_coverage: true
+  primary_results_use_actual_selected_output: true
+  preserve_all_failed_runs: true

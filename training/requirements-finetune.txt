@@ -1,0 +1,21 @@
+# Pinned requirements of the fine-tune runner (training/finetune). CPU pins follow requirements.lock except PyArrow below.
+# PyTorch comes with the Colab or Kaggle runtime; its version, the GPU and the precision are recorded in that run's run_config.json.
+# bitsandbytes is not installed in the validated environment (QLoRA needs a CUDA GPU), so it is not pinned here and the QLoRA path
+# is only checked by the run itself. Compatibility of these pins with a given runtime's PyTorch is likewise not checked here.
+transformers==5.19.0
+peft==0.21.2
+accelerate==1.15.0
+tokenizers==0.23.2
+safetensors==0.8.0
+huggingface-hub==1.33.0
+pydantic==2.13.5
+pyyaml==6.0.3
+# Colab's preinstalled cudf-cu13 26.6 requires pyarrow>=19,<24. Keep a fixed version within that range.
+pyarrow==23.0.1
+scipy==1.17.1
+packaging==26.3
+bitsandbytes
+matplotlib>=3.8,<4
+# Optional counters are handled gracefully when the GPU driver denies access.
+nvidia-ml-py>=12,<14
+psutil>=6,<8

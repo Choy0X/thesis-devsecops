@@ -1,0 +1,39 @@
+# Benchmark registry of the dataset and fine-tuning phase.
+#
+# These are the benchmark names the project was asked to track. Nothing in an entry has been checked against a primary source yet, so every
+# entry is unresolved with its owner, version, revision, task, metric, language, access, harness and budget empty. A field is filled only
+# after the primary source has been read, together with `source_checked: true` and the source; an entry becomes `resolved` only with every
+# field. An entry never carries a score: results of a local run live in the run folder that produced them.
+schema: benchmark-registry/1
+phase: dataset_finetuning
+rules:
+  - A benchmark is run only after its exact owner, version, revision, task, metric direction, language, access requirements, harness and budget are resolved from a primary source.
+  - A current website leaderboard is not a matched local experiment, and no score from one is recorded here.
+  - Reproduction benchmarks, exploitation-development benchmarks and enterprise attack simulations do not measure defensive discovery and repair; this phase prioritizes discovery, repair and instruction integrity.
+  - An official benchmark adapter uses and records the benchmark's own required budgets, not the project's sandbox defaults.
+  - A held-out benchmark task, solution or grader is never used for training, and an overlap with the training data is checked where it can be (and the limit is stated where it cannot).
+  - An entry may stay deferred or unavailable; access to a private full suite is never assumed.
+benchmarks:
+  - name: CyberGym
+    status: unresolved
+  - name: CWE-Bench
+    status: unresolved
+    ambiguity: CWE-Bench is ambiguous without its owner and version; the relevant audit or patch benchmark must be told apart from similarly named Java datasets before anything is run.
+  - name: CWE-bench v1
+    status: unresolved
+    ambiguity: Not the same entry as CWE-Bench above; the two names must be resolved separately to their owners and versions.
+  - name: Gray Swan IPI
+    status: unresolved
+    notes:
+      - Instruction-integrity robustness needs both a lower attack success rate and retained legitimate-task completion; a model that refuses every task is not a robust assistant.
+      - Public development attacks and private owner evaluations are labeled separately.
+  - name: ExploitGym
+    status: unresolved
+  - name: ExploitBench
+    status: unresolved
+  - name: SEC-Bench Pro
+    status: unresolved
+  - name: The Last Ones
+    status: unresolved
+  - name: FrontierCyber
+    status: unresolved

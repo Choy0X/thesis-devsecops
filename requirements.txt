@@ -1,0 +1,47 @@
+# Python runtime for the thesis system (the app). Fine-tuning deps are in
+# training/requirements.txt (GPU, Colab/Kaggle).
+
+# Desktop shell + backend
+# pyloid opens the native window (QtWebEngine, via PySide6). It is only needed for
+# the desktop window; headless/server mode (ZTSA_HEADLESS=1, or no display) uses
+# neither it nor PySide6.
+pyloid>=0.27,<1.0
+fastapi>=0.110
+uvicorn[standard]>=0.29
+websockets>=12.0
+httpx>=0.27             # the model gateway passes requests (and streams) on to llama.cpp (the OpenAI client already needs it)
+python-dotenv>=1.0
+pydantic>=2.0
+pyyaml>=6.0          # training/configs/dataset_finetuning.yaml (the phase contract)
+-r requirements-projects-ide.txt
+
+# Pipeline
+pandas>=2.2
+pyarrow>=16.0
+requests>=2.31
+tqdm>=4.66
+cvss>=3.0
+packaging>=23.0
+numpy>=1.26
+psutil>=5.9           # the machine's cores and memory (compute.py), and the benchmark tools
+scikit-learn>=1.4
+matplotlib>=3.8
+# function-level code pairs for non-Python languages (grammars fetched once, cached)
+tree-sitter-language-pack>=1.20,<2
+# Admission uses fixed local wheels, without a grammar-download cold start.
+tree-sitter-javascript==0.25.0
+tree-sitter-typescript==0.23.2
+
+# LLM engine (OpenAI-compatible) + RAG. The embedding model is a GGUF file run by llama.cpp behind the model gateway, so the app no longer needs sentence-transformers;
+# only tools/embed_gguf_check.py (the check of a GGUF model against the one it replaced) does, and says so.
+openai>=1.30
+trafilatura>=1.8,<2    # clean main-content text from a web page a chat's search fetched (pipeline/rag/web_fetch.py); no other HTML-extraction library exists here yet
+
+# Patch sandbox
+docker>=7.0
+# sqlite3 ships with Python; the embedded store requires SQLite JSONB and FTS5.
+# MongoDB export is optional and isolated in requirements-migration.txt.
+regex>=2024.0.0        # matches a pattern a language model wrote with a time limit (the project chat's search tool)
+jinja2>=3.1            # reads a model's chat template to see what it can do (agentic/profiles); a dependency of other packages already
+jsonschema>=4.17       # checks a tool call's arguments against the tool's own schema (agentic/tools)
+sentencepiece>=0.2      # imported by llama.cpp's GGUF conversion scripts (Model Hub, Serving: Convert a model to GGUF); the scripts themselves: tools/install_convert_scripts.py

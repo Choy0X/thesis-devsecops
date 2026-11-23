@@ -1,0 +1,19 @@
+# Separate from CUDA: matching Linux PyTorch/XLA wheels, no bitsandbytes.
+torch==2.9.0
+# The [tpu] extra pins libtpu==0.0.21, which has no CPython 3.13 wheel.
+# Install the runtime explicitly; 0.0.21.1 publishes cp311/cp312/cp313 Linux wheels.
+torch_xla==2.9.0
+libtpu==0.0.21.1
+transformers==5.19.0
+peft==0.21.2
+accelerate==1.15.0
+tokenizers==0.23.2
+safetensors==0.8.0
+huggingface-hub==1.33.0
+pydantic==2.13.5
+pyyaml==6.0.3
+pyarrow==23.0.1
+scipy==1.17.1
+packaging==26.3
+matplotlib>=3.8,<4
+psutil>=6,<8

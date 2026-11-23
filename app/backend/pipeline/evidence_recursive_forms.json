@@ -1,0 +1,117 @@
+[
+  {
+    "source": "github.com/antfu/utils@7f8b16c6181c988bdb96613fbb2533b345f68682:src/object.ts:deepMerge",
+    "before": "function deepMerge<T extends object = object, S extends object = T>(target: T, ...sources: S[]): DeepMerge<T, S> {\n  if (!sources.length)\n    return target as any\n\n  const source = sources.shift()\n  if (source === undefined)\n    return target as any\n\n  if (isMergableObject(target) && isMergableObject(source)) {\n    objectKeys(source).forEach((key) => {\n      // @ts-expect-error\n      if (isMergableObject(source[key])) {\n        // @ts-expect-error\n        if (!target[key])\n          // @ts-expect-error\n          target[key] = {}\n\n        // @ts-expect-error\n        deepMerge(target[key], source[key])\n      }\n      else {\n        // @ts-expect-error\n        target[key] = source[key]\n      }\n    })\n  }\n\n  return deepMerge(target, ...sources)\n}",
+    "after": "function deepMerge<T extends object = object, S extends object = T>(target: T, ...sources: S[]): DeepMerge<T, S> {\n  if (!sources.length)\n    return target as any\n\n  const source = sources.shift()\n  if (source === undefined)\n    return target as any\n\n  if (isMergableObject(target) && isMergableObject(source)) {\n    objectKeys(source).forEach((key) => {\n      if (key === '__proto__' || key === 'constructor' || key === 'prototype')\n        return\n\n      // @ts-expect-error\n      if (isMergableObject(source[key])) {\n        // @ts-expect-error\n        if (!target[key])\n          // @ts-expect-error\n          target[key] = {}\n\n        // @ts-expect-error\n        deepMerge(target[key], source[key])\n      }\n      else {\n        // @ts-expect-error\n        target[key] = source[key]\n      }\n    })\n  }\n\n  return deepMerge(target, ...sources)\n}",
+    "path": "src/object.ts",
+    "helpers": [
+      {
+        "name": "objectKeys",
+        "path": "src/object.ts",
+        "text": "function objectKeys<T extends object>(obj: T) {\n  return Object.keys(obj) as Array<`${keyof T & (string | number | boolean | null | undefined)}`>\n}"
+      },
+      {
+        "name": "isMergableObject",
+        "path": "src/object.ts",
+        "text": "function isMergableObject(item: any): item is Object {\n  return isObject(item) && !Array.isArray(item)\n}"
+      },
+      {
+        "name": "isObject",
+        "path": "src/is.ts",
+        "text": "const isObject = (val: any): val is object => toString(val) === '[object Object]'"
+      },
+      {
+        "name": "toString",
+        "path": "src/base.ts",
+        "text": "const toString = (v: any) => Object.prototype.toString.call(v)"
+      }
+    ],
+    "rule": "object-tag-recursive-merge/1"
+  },
+  {
+    "source": "github.com/adaltas/node-mixme@cfd5fbfc32368bcf7e06d1c5985ea60e34cd4028:lib/index.js:mutate",
+    "before": "mutate = function() {\n  var i, j, name, ref, source, target, v;\n  target = arguments[0];\n  for (i = j = 1, ref = arguments.length; (1 <= ref ? j < ref : j > ref); i = 1 <= ref ? ++j : --j) {\n    source = arguments[i];\n    if (is_object_literal(source)) {\n      if (!is_object_literal(target)) {\n        target = {};\n      }\n      for (name in source) {\n        target[name] = mutate(target[name], source[name]);\n      }\n    } else if (Array.isArray(source)) {\n      target = (function() {\n        var k, len, results;\n        results = [];\n        for (k = 0, len = source.length; k < len; k++) {\n          v = source[k];\n          results.push(mutate(void 0, v));\n        }\n        return results;\n      })();\n    } else if (source !== void 0) {\n      target = source;\n    }\n  }\n  return target;\n};",
+    "after": "mutate = function() {\n  var i, j, name, ref, source, target, v;\n  target = arguments[0];\n  for (i = j = 1, ref = arguments.length; (1 <= ref ? j < ref : j > ref); i = 1 <= ref ? ++j : --j) {\n    source = arguments[i];\n    if (is_object_literal(source)) {\n      if (!is_object_literal(target)) {\n        target = {};\n      }\n      for (name in source) {\n        if (name === '__proto__') {\n          continue;\n        }\n        target[name] = mutate(target[name], source[name]);\n      }\n    } else if (Array.isArray(source)) {\n      target = (function() {\n        var k, len, results;\n        results = [];\n        for (k = 0, len = source.length; k < len; k++) {\n          v = source[k];\n          results.push(mutate(void 0, v));\n        }\n        return results;\n      })();\n    } else if (source !== void 0) {\n      target = source;\n    }\n  }\n  return target;\n};",
+    "path": "lib/index.js",
+    "helpers": [
+      {
+        "name": "is_object_literal",
+        "path": "lib/index.js",
+        "text": "is_object_literal = function(obj) {\n  var test;\n  test = obj;\n  if (typeof obj !== 'object' || obj === null) {\n    return false;\n  } else {\n    if (Object.getPrototypeOf(test) === null) {\n      return true;\n    }\n    while (!false) {\n      if (Object.getPrototypeOf(test = Object.getPrototypeOf(test)) === null) {\n        break;\n      }\n    }\n    return Object.getPrototypeOf(obj) === test;\n  }\n};"
+      }
+    ],
+    "rule": "plain-record-recursive-clone/1"
+  },
+  {
+    "source": "github.com/unjs/defu@3942bfbbcaa72084bd4284846c83bd61ed7c8b29:src/defu.ts:_defu",
+    "before": "function _defu<T>(baseObject: T, defaults: any, namespace = \".\", merger?: Merger): T {\n  if (!isPlainObject(defaults)) {\n    return _defu(baseObject, {}, namespace, merger);\n  }\n\n  const object = Object.assign({}, defaults);\n\n  for (const key in baseObject) {\n    if (key === \"__proto__\" || key === \"constructor\") {\n      continue;\n    }\n\n    const value = baseObject[key];\n\n    if (value === null || value === undefined) {\n      continue;\n    }\n\n    if (merger && merger(object, key, value, namespace)) {\n      continue;\n    }\n\n    if (Array.isArray(value) && Array.isArray(object[key])) {\n      object[key] = [...value, ...object[key]];\n    } else if (isPlainObject(value) && isPlainObject(object[key])) {\n      object[key] = _defu(\n        value,\n        object[key],\n        (namespace ? `${namespace}.` : \"\") + key.toString(),\n        merger,\n      );\n    } else {\n      object[key] = value;\n    }\n  }\n\n  return object;\n}",
+    "after": "function _defu<T>(baseObject: T, defaults: any, namespace = \".\", merger?: Merger): T {\n  if (!isPlainObject(defaults)) {\n    return _defu(baseObject, {}, namespace, merger);\n  }\n\n  const object = { ...defaults };\n\n  for (const key in baseObject) {\n    if (key === \"__proto__\" || key === \"constructor\") {\n      continue;\n    }\n\n    const value = baseObject[key];\n\n    if (value === null || value === undefined) {\n      continue;\n    }\n\n    if (merger && merger(object, key, value, namespace)) {\n      continue;\n    }\n\n    if (Array.isArray(value) && Array.isArray(object[key])) {\n      object[key] = [...value, ...object[key]];\n    } else if (isPlainObject(value) && isPlainObject(object[key])) {\n      object[key] = _defu(\n        value,\n        object[key],\n        (namespace ? `${namespace}.` : \"\") + key.toString(),\n        merger,\n      );\n    } else {\n      object[key] = value;\n    }\n  }\n\n  return object;\n}",
+    "path": "src/defu.ts",
+    "helpers": [
+      {
+        "name": "isPlainObject",
+        "path": "src/_utils.ts",
+        "text": "function isPlainObject(value: unknown): boolean {\n  if (value === null || typeof value !== \"object\") {\n    return false;\n  }\n  const prototype = Object.getPrototypeOf(value);\n\n  if (\n    prototype !== null &&\n    prototype !== Object.prototype &&\n    Object.getPrototypeOf(prototype) !== null\n  ) {\n    return false;\n  }\n\n  if (Symbol.iterator in value) {\n    return false;\n  }\n\n  if (Symbol.toStringTag in value) {\n    return Object.prototype.toString.call(value) === \"[object Module]\";\n  }\n\n  return true;\n}"
+      }
+    ],
+    "rule": "spread-own-defaults/1"
+  },
+  {
+    "source": "github.com/deepstreamIO/deepstream.io@54b8e2958a98df444b5b5d9a66e22872afd84e44:src/utils/json-path.ts:tokenize",
+    "rule": "source-bound-path-tokenizer/1",
+    "before": "function tokenize (path: string): Array<string | number> {\n  const tokens: Array<string | number> = []\n\n  const parts = path.split('.')\n\n  for (let i = 0; i < parts.length; i++) {\n    const part = parts[i].trim()\n\n    if (part.length === 0) {\n      continue\n    }\n\n    const arrayIndexes: string[] = part.split(SPLIT_REG_EXP)\n\n    if (arrayIndexes.length === 0) {\n      // TODO\n      continue\n    }\n\n    tokens.push(arrayIndexes[0])\n\n    for (let j = 1; j < arrayIndexes.length; j++) {\n      if (arrayIndexes[j].length === 0) {\n        continue\n      }\n\n      tokens.push(Number(arrayIndexes[j]))\n    }\n  }\n  return tokens\n}",
+    "after": "function tokenize (path: string): Array<string | number> {\n  const tokens: Array<string | number> = []\n\n  const parts = path.split('.')\n\n  for (let i = 0; i < parts.length; i++) {\n    const part = parts[i].trim()\n\n    if (part.length === 0) {\n      continue\n    }\n\n    const arrayIndexes: string[] = part.split(SPLIT_REG_EXP)\n\n    if (arrayIndexes.length === 0) {\n      // TODO\n      continue\n    }\n\n    if (FORBIDDEN_KEYS.has(arrayIndexes[0])) {\n      throw new Error(`invalid path: forbidden key '${arrayIndexes[0]}'`)\n    }\n\n    tokens.push(arrayIndexes[0])\n\n    for (let j = 1; j < arrayIndexes.length; j++) {\n      if (arrayIndexes[j].length === 0) {\n        continue\n      }\n\n      tokens.push(Number(arrayIndexes[j]))\n    }\n  }\n  return tokens\n}",
+    "path": "src/utils/json-path.ts",
+    "helpers_before": [
+      {
+        "name": "SPLIT_REG_EXP",
+        "path": "src/utils/json-path.ts",
+        "text": "const SPLIT_REG_EXP = /[[\\]]/g"
+      },
+      {
+        "name": "setValue",
+        "path": "src/utils/json-path.ts",
+        "text": "function setValue (root: any, path: string, value: any): void {\n  const tokens = tokenize(path)\n  let node = root\n\n  let i\n  for (i = 0; i < tokens.length - 1; i++) {\n    const token = tokens[i]\n\n    if (node[token] !== undefined && typeof node[token] === 'object') {\n      node = node[token]\n    } else if (typeof tokens[i + 1] === 'number') {\n      node = node[token] = []\n    } else {\n      node = node[token] = {}\n    }\n  }\n\n  if (value === undefined) {\n    delete node[tokens[i]]\n  } else {\n    node[tokens[i]] = value\n  }\n}"
+      }
+    ],
+    "helpers_after": [
+      {
+        "name": "SPLIT_REG_EXP",
+        "path": "src/utils/json-path.ts",
+        "text": "const SPLIT_REG_EXP = /[[\\]]/g"
+      },
+      {
+        "name": "setValue",
+        "path": "src/utils/json-path.ts",
+        "text": "function setValue (root: any, path: string, value: any): void {\n  const tokens = tokenize(path)\n  let node = root\n\n  let i\n  for (i = 0; i < tokens.length - 1; i++) {\n    const token = tokens[i]\n\n    if (node[token] !== undefined && typeof node[token] === 'object') {\n      node = node[token]\n    } else if (typeof tokens[i + 1] === 'number') {\n      node = node[token] = []\n    } else {\n      node = node[token] = {}\n    }\n  }\n\n  if (value === undefined) {\n    delete node[tokens[i]]\n  } else {\n    node[tokens[i]] = value\n  }\n}"
+      },
+      {
+        "name": "FORBIDDEN_KEYS",
+        "path": "src/utils/json-path.ts",
+        "text": "const FORBIDDEN_KEYS = new Set(['__proto__', 'constructor', 'prototype'])"
+      }
+    ]
+  },
+  {
+    "source": "github.com/asaianudeep/deep-override@2aced17651fb684959a6e04b1465a8329b3d5268:src/index.js:override",
+    "source_record_id": "rec_994b2609f1b0226d",
+    "before": "function override(...rawArgs) {\n  if (rawArgs.length < 1 || typeof rawArgs[0] !== 'object') return false;\n  if (rawArgs.length < 2) return rawArgs[0];\n  const target = rawArgs[0];\n  const args = Array.prototype.slice.call(rawArgs, 1);\n  let val, src;\n  args.forEach(obj => {\n    if (typeof obj !== 'object') return;\n    if (Array.isArray(obj)) {\n      obj.forEach((_, index) => {\n        src = target[index];\n        val = obj[index];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[index] = val;\n        } else if (isSpecificValue(val)) {\n          target[index] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[index] = override([], val);\n          } else {\n            target[index] = override({}, val);\n          }\n        } else {\n          target[index] = override(src, val);\n        }\n        return;\n      });\n    } else {\n      Object.keys(obj).forEach(key => {\n        src = target[key];\n        val = obj[key];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[key] = val;\n        } else if (isSpecificValue(val)) {\n          target[key] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[key] = override([], val);\n          } else {\n            target[key] = override({}, val);\n          }\n        } else {\n          target[key] = override(src, val);\n        }\n        return;\n      });\n    }\n  });\n  return target;\n}",
+    "after": "function override(...rawArgs) {\n  if (rawArgs.length < 1 || typeof rawArgs[0] !== 'object') return false;\n  if (rawArgs.length < 2) return rawArgs[0];\n  const target = rawArgs[0];\n  const args = Array.prototype.slice.call(rawArgs, 1);\n  let val, src;\n  args.forEach(obj => {\n    if (typeof obj !== 'object') return;\n    if (Array.isArray(obj)) {\n      obj.forEach((_, index) => {\n        src = target[index];\n        val = obj[index];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[index] = val;\n        } else if (isSpecificValue(val)) {\n          target[index] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[index] = override([], val);\n          } else {\n            target[index] = override({}, val);\n          }\n        } else {\n          target[index] = override(src, val);\n        }\n        return;\n      });\n    } else {\n      Object.keys(obj).forEach(key => {\n        if (key == '__proto__' || key == 'constructor' || key == 'prototype')\n          return\n        src = target[key];\n        val = obj[key];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[key] = val;\n        } else if (isSpecificValue(val)) {\n          target[key] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[key] = override([], val);\n          } else {\n            target[key] = override({}, val);\n          }\n        } else {\n          target[key] = override(src, val);\n        }\n        return;\n      });\n    }\n  });\n  return target;\n}",
+    "path": "src/index.js",
+    "helpers": [
+      {
+        "name": "isSpecificValue",
+        "path": "src/index.js",
+        "text": "function isSpecificValue(val) {\n  return val instanceof Buffer || val instanceof Date || val instanceof RegExp;\n}"
+      },
+      {
+        "name": "cloneSpecificValue",
+        "path": "src/index.js",
+        "text": "function cloneSpecificValue(val) {\n  if (val instanceof Buffer) {\n    const _copy = Buffer.alloc(val.length);\n    val.copy(_copy);\n    return _copy;\n  } else if (val instanceof Date) {\n    return new Date(val.getTime());\n  } else if (val instanceof RegExp) {\n    return new RegExp(val);\n  } else {\n    throw new Error('Unexpected Value Type');\n  }\n}"
+      }
+    ],
+    "rule": "guarded-json-override/1",
+    "module_before": "function isSpecificValue(val) {\n  return val instanceof Buffer || val instanceof Date || val instanceof RegExp;\n}\n\nfunction cloneSpecificValue(val) {\n  if (val instanceof Buffer) {\n    const _copy = Buffer.alloc(val.length);\n    val.copy(_copy);\n    return _copy;\n  } else if (val instanceof Date) {\n    return new Date(val.getTime());\n  } else if (val instanceof RegExp) {\n    return new RegExp(val);\n  } else {\n    throw new Error('Unexpected Value Type');\n  }\n}\n\nfunction override(...rawArgs) {\n  if (rawArgs.length < 1 || typeof rawArgs[0] !== 'object') return false;\n  if (rawArgs.length < 2) return rawArgs[0];\n  const target = rawArgs[0];\n  const args = Array.prototype.slice.call(rawArgs, 1);\n  let val, src;\n  args.forEach(obj => {\n    if (typeof obj !== 'object') return;\n    if (Array.isArray(obj)) {\n      obj.forEach((_, index) => {\n        src = target[index];\n        val = obj[index];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[index] = val;\n        } else if (isSpecificValue(val)) {\n          target[index] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[index] = override([], val);\n          } else {\n            target[index] = override({}, val);\n          }\n        } else {\n          target[index] = override(src, val);\n        }\n        return;\n      });\n    } else {\n      Object.keys(obj).forEach(key => {\n        src = target[key];\n        val = obj[key];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[key] = val;\n        } else if (isSpecificValue(val)) {\n          target[key] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[key] = override([], val);\n          } else {\n            target[key] = override({}, val);\n          }\n        } else {\n          target[key] = override(src, val);\n        }\n        return;\n      });\n    }\n  });\n  return target;\n}\n\nmodule.exports = override;",
+    "module_after": "function isSpecificValue(val) {\n  return val instanceof Buffer || val instanceof Date || val instanceof RegExp;\n}\n\nfunction cloneSpecificValue(val) {\n  if (val instanceof Buffer) {\n    const _copy = Buffer.alloc(val.length);\n    val.copy(_copy);\n    return _copy;\n  } else if (val instanceof Date) {\n    return new Date(val.getTime());\n  } else if (val instanceof RegExp) {\n    return new RegExp(val);\n  } else {\n    throw new Error('Unexpected Value Type');\n  }\n}\n\nfunction override(...rawArgs) {\n  if (rawArgs.length < 1 || typeof rawArgs[0] !== 'object') return false;\n  if (rawArgs.length < 2) return rawArgs[0];\n  const target = rawArgs[0];\n  const args = Array.prototype.slice.call(rawArgs, 1);\n  let val, src;\n  args.forEach(obj => {\n    if (typeof obj !== 'object') return;\n    if (Array.isArray(obj)) {\n      obj.forEach((_, index) => {\n        src = target[index];\n        val = obj[index];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[index] = val;\n        } else if (isSpecificValue(val)) {\n          target[index] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[index] = override([], val);\n          } else {\n            target[index] = override({}, val);\n          }\n        } else {\n          target[index] = override(src, val);\n        }\n        return;\n      });\n    } else {\n      Object.keys(obj).forEach(key => {\n        if (key == '__proto__' || key == 'constructor' || key == 'prototype')\n          return\n        src = target[key];\n        val = obj[key];\n        if (val === target) {\n        } else if (typeof val !== 'object' || val === null) {\n          target[key] = val;\n        } else if (isSpecificValue(val)) {\n          target[key] = cloneSpecificValue(val);\n        } else if (typeof src !== 'object' || src === null) {\n          if (Array.isArray(val)) {\n            target[key] = override([], val);\n          } else {\n            target[key] = override({}, val);\n          }\n        } else {\n          target[key] = override(src, val);\n        }\n        return;\n      });\n    }\n  });\n  return target;\n}\n\nmodule.exports = override;\n"
+  }
+]

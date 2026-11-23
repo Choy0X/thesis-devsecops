@@ -1,0 +1,113 @@
+{
+ "schema": 1,
+ "tools": {
+  "rtk": {
+   "repository": "rtk-ai/rtk",
+   "tag": "v1.0.1",
+   "version": "1.0.1",
+   "program": "rtk",
+   "licence": "Apache-2.0",
+   "note": "the rtk-oss edition: the command filters and the rewrite hook, Apache-2.0 only (the full edition links a source-available engine under BUSL-1.1 that this app does not need)",
+   "assets": {
+    "windows-x86_64": {
+     "name": "rtk-oss-x86_64-pc-windows-msvc.zip",
+     "size": 5708680,
+     "sha256": "0e53e2eca471e15fbd3636e64e6bc0b182cbc278ed0339c80450a2dd03f4cd6b",
+     "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-x86_64-pc-windows-msvc.zip"
+    },
+    "linux-x86_64": {
+     "name": "rtk-oss-x86_64-unknown-linux-musl.tar.gz",
+     "size": 5766270,
+     "sha256": "a44e8ffc43981100b4ddf1710399a1649a6c874591aa6d0c0727fe6cbd983c41",
+     "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "linux-aarch64": {
+     "name": "rtk-oss-aarch64-unknown-linux-gnu.tar.gz",
+     "size": 5246576,
+     "sha256": "ee24a43dac9162de55fea8460b5efcd56d401ec28b5117c921bffa8a57bc136e",
+     "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    "macos-x86_64": {
+     "name": "rtk-oss-x86_64-apple-darwin.tar.gz",
+     "size": 5428609,
+     "sha256": "2cf4d6dd2cabccbc74aa6aba2a48e60aad85b1a31e3d740e6ca0b2fa0060b06a",
+     "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-x86_64-apple-darwin.tar.gz"
+    },
+    "macos-aarch64": {
+     "name": "rtk-oss-aarch64-apple-darwin.tar.gz",
+     "size": 4999666,
+     "sha256": "4a4d9d09656ff29423336aa506e680afc3f7b6dafe84f0194a1c9a523a3c80e1",
+     "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-aarch64-apple-darwin.tar.gz"
+    }
+   }
+  },
+  "ripgrep": {
+   "repository": "BurntSushi/ripgrep",
+   "tag": "15.2.0",
+   "version": "15.2.0",
+   "program": "rg",
+   "licence": "MIT OR Unlicense",
+   "note": "what rtk's grep and the agent's grep and glob run on",
+   "assets": {
+    "windows-x86_64": {
+     "name": "ripgrep-15.2.0-x86_64-pc-windows-msvc.zip",
+     "size": 1789611,
+     "sha256": "71b2fef860abe467217a538ff31de02f5258807c0129f771846f87bd029aafc5",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-pc-windows-msvc.zip"
+    },
+    "windows-aarch64": {
+     "name": "ripgrep-15.2.0-aarch64-pc-windows-msvc.zip",
+     "size": 1640124,
+     "sha256": "e4abca10c3a64ebea742667dd7009449d49403db5460dd6873e389fa2945360f",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-pc-windows-msvc.zip"
+    },
+    "linux-x86_64": {
+     "name": "ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz",
+     "size": 2265718,
+     "sha256": "33e15bcf1624b25cdd2a55813a47a2f95dbe126268203e76aa6a585d1e7b149c",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "linux-aarch64": {
+     "name": "ripgrep-15.2.0-aarch64-unknown-linux-gnu.tar.gz",
+     "size": 1854661,
+     "sha256": "a740b91c82eaf9914cfedd353572f2791cbe0162c84101ee0951058f4dcbc90d",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    "macos-x86_64": {
+     "name": "ripgrep-15.2.0-x86_64-apple-darwin.tar.gz",
+     "size": 1878284,
+     "sha256": "af7825fcc69a2afc7a7aea55fc9af90e26421d8f20fe59df32e233c0b8a231c1",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-apple-darwin.tar.gz"
+    },
+    "macos-aarch64": {
+     "name": "ripgrep-15.2.0-aarch64-apple-darwin.tar.gz",
+     "size": 1764284,
+     "sha256": "3750b2e93f37e0c692657da574d7019a101c0084da05a790c83fd335bad973e4",
+     "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-apple-darwin.tar.gz"
+    }
+   }
+  },
+  "git": {
+   "repository": "git-for-windows/git",
+   "tag": "v2.56.1.windows.1",
+   "version": "2.56.1.windows.1",
+   "program": "git",
+   "licence": "GPL-2.0-only and bundled component licenses",
+   "note": "MinGit for Windows, used for local repository operations",
+   "assets": {
+    "windows-x86_64": {
+     "name": "MinGit-2.56.1-64-bit.zip",
+     "size": 39849768,
+     "sha256": "4a92850b6e917da4fd010669b614b55dccf5b0ec333a534cc4be4700dfefdafd",
+     "url": "https://github.com/git-for-windows/git/releases/download/v2.56.1.windows.1/MinGit-2.56.1-64-bit.zip"
+    },
+    "windows-aarch64": {
+     "name": "MinGit-2.56.1-arm64.zip",
+     "size": 37983254,
+     "sha256": "96571e442e90523a90e5fd8661b4c4e43bc192910f3c6db938816e6955b4cc8c",
+     "url": "https://github.com/git-for-windows/git/releases/download/v2.56.1.windows.1/MinGit-2.56.1-arm64.zip"
+    }
+   }
+  }
+ }
+}

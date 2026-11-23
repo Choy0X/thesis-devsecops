@@ -4,28 +4,29 @@ This repository accompanies *AI-Driven Autonomous Vulnerability Detection, Proac
 
 [Read the thesis draft](thesis/thesis.pdf). This is the 55-page version reviewed in November 2026. The thesis describes the framework, the data mining and training procedures, the evaluation, and the use of AI tools.
 
-## Application and training code
+## Run the desktop application
 
-The React interface is in [app/frontend](app/frontend). It can be compiled separately. Running the full desktop application requires its service backend. The Python components included here can be used on their own.
+The desktop application combines a Pyloid window, a React interface, a FastAPI backend, and a local SQLite database. From the Data and Campaigns pages you can collect public advisories, mine fix commits, and create and monitor collection campaigns. In Projects, open a local repository, select a model, and start a coding conversation. The agent can read project files, propose edits, and run project tests. Review changes before applying them to your checkout.
 
-- [Manifest readers](app/backend/pipeline/scan/manifests.py) extract dependency names and versions from project manifests and lock files. A declared version range and a locked version carry different meanings in a scan.
-- [Advisory references](app/backend/pipeline/ingest/fixrefs.py) map OSV and NVD entries to upstream fix commits. This copy contains the metadata parsing functions used in data collection.
-- [Paired training losses](training/finetune/pair_losses.py) contains the two PyTorch objectives extracted from the training implementation.
-- [Training sampler](training/finetune/sampler.py) schedules tasks and paired training examples. The [sampler tests](tests/test_sampler_pairs.py) cover pair selection and checkpoint recovery.
-
-With Python 3.11, install the test requirements and run the component tests from the repository root.
+Use Python 3.11 and Node.js 18 or newer with npm. In an activated Python virtual environment, run these commands from the repository root.
 
 ~~~sh
-python -m pip install -r requirements-dev.txt
-python -m pytest -q tests
-~~~
-
-To compile the interface, run the following from the repository root.
-
-~~~sh
+python -m pip install -r requirements.txt
 npm --prefix app/frontend ci
 npm --prefix app/frontend run build
+python -m app.desktop
 ~~~
+
+For a server-only session, set the environment variable `ZTSA_HEADLESS=1` before launching. The launcher prints a local URL. Start Ollama and select an installed compatible model to use Projects chat. Mining public sources requires network access. Project checks that run in containers require Docker. Execution-based vulnerability reproduction is unavailable in this distribution. Static code review, dependency analysis, and project regression tests are included.
+
+## Implementation
+
+- [Campaign management](app/backend/campaigns_api.py) handles collection plans, job controls, resource checks, and progress.
+- [Data mining](app/backend/pipeline/ingest) follows advisories to upstream commits and extracts vulnerable and fixed code pairs.
+- [Projects](app/backend/pipeline/project_ide) provides model-backed coding sessions, workspaces, patch review, and terminal integration.
+- [Training](training/finetune) contains the sampling, paired objectives, model training, and evaluation code.
+
+To run the backend tests, install `requirements-dev.txt` in the same environment and run `python -m pytest -q tests`. For the interface tests, run `npm --prefix app/frontend test`.
 
 ## Experiment records
 

@@ -1,0 +1,15 @@
+# Python deps for the training/ scripts only (Colab/Kaggle GPU).
+torch
+transformers
+peft
+accelerate
+bitsandbytes
+datasets
+scikit-learn
+sentence-transformers
+pandas
+pyarrow
+numpy
+matplotlib
+openai
+python-dotenv

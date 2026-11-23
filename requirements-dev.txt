@@ -1,2 +1,2 @@
-packaging
-pytest
+-r requirements.txt
+pytest>=8.0

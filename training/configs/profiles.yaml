@@ -1,0 +1,78 @@
+# Starting points for a run, as overrides of the contract (training/configs/dataset_finetuning.yaml). A profile only sets settings that may change; every
+# value is checked against the same models as the contract when a profile is loaded. A profile is a starting point, not a result: which one is better is
+# for the run's evaluation to say, and no claim of that kind is made here.
+profiles:
+  contract:
+    label: "As in the contract"
+    purpose: "The configuration the experiments are pinned to, unchanged. Choose it when the run is meant to be cited."
+    rationale: "No override: every value is the contract's own."
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+  smoke:
+    label: "Smoke test"
+    purpose: "The shortest legitimate run, to see that a bundle trains and evaluates at all."
+    rationale: >-
+      The data is marked as a software smoke test, and training stops at the contract's first evaluation point (half a pass over the data), the smallest one it
+      lists. Everything else is the contract's. A result from this profile checks the software, not the method.
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+      data.purpose: software_smoke_test
+      training.maximum_pilot_family_passes: 0.5
+      training.evaluate_at_family_passes: [0.5]
+  balanced:
+    label: "Balanced"
+    purpose: "A shorter run with the contract's own adapter and learning rate."
+    rationale: >-
+      The LoRA rank (64), alpha (128) and learning rate (1e-4) are the contract's. Training stops after two passes, not three, at evaluation points the contract
+      already lists (0.5, 1 and 2), which saves a third of the time; early stopping still ends a run that has stopped improving.
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+      training.maximum_pilot_family_passes: 2.0
+      training.evaluate_at_family_passes: [0.5, 1.0, 2.0]
+  higher_quality:
+    label: "Higher quality"
+    purpose: "The rank-64 adapter with a lower learning rate for a quality pilot."
+    rationale: >-
+      Rank 64 and alpha 128 keep the contract's adapter capacity and ratio of 2. The learning rate is the lower pilot value (5e-5).
+      Compare the held-out evaluation before choosing this profile for a larger run; improved model quality is not established by the profile name.
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+      lora.r: 64
+      lora.lora_alpha: 128
+      training.learning_rate: 0.00005
+  native_cpu_offload:
+    label: "Experimental CPU offload (weak GPU)"
+    purpose: "Keep the selected model, 4096-token context and rank-64 adapter; stream frozen weights from system RAM. Slower and requires host RAM."
+    rationale: >-
+      A separate full-precision experiment, not CUDA NF4. Frozen projections stay in system RAM;
+      LoRA and the output head remain on the GPU. CPU AdamW avoids GPU moment storage.
+      Activation offload uses native PyTorch on Windows and Linux. Real 7B hardware fit must pass a smoke check.
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+      precision.mode: cpu_weight_offload
+      precision.load_in_4bit: false
+      precision.prepare_model_for_kbit_training: false
+      training.optimizer: adamw_cpu
+      training.activation_offload: true
+      lora.r: 64
+      lora.lora_alpha: 128
+      context.max_total_tokens: 4096
+  tpu_v5e:
+    label: "TPU v5e-1 (experimental, 7B)"
+    purpose: "Qwen2.5-Coder-7B with frozen INT4 base projections and BF16 LoRA computation. Requires real TPU validation."
+    rationale: "Preserves context 4096 and rank 64. Separate quantization from CUDA NF4; does not claim the configuration fits until measured on hardware."
+    overrides:
+      data.train_slice_start: 0.0
+      data.train_slice_end: 1.0
+      precision.mode: tpu_int4_bf16
+      precision.compute_dtype: bf16
+      precision.fp16_loss_scaling: false
+      precision.prepare_model_for_kbit_training: false
+      lora.r: 64
+      lora.lora_alpha: 128
+      training.learning_rate: 0.00005
